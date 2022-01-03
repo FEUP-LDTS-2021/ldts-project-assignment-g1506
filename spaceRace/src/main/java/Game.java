@@ -10,12 +10,14 @@ import java.io.IOException;
 
 public class Game {
     Screen screen = null;
-    Display display = new Display(100, 70);
+    int width = 120;
+    int height = 35;
+    Display display = new Display(width, height);
 
     public Game() {
 
         try {
-            TerminalSize terminalSize = new TerminalSize(100, 70);
+            TerminalSize terminalSize = new TerminalSize(width, height);
             DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
             Terminal terminal = terminalFactory.createTerminal();
             screen = new TerminalScreen(terminal);
