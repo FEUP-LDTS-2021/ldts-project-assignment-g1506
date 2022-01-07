@@ -1,8 +1,18 @@
 ## LDTS_1506 - <SPACE RACE>
 
-O jogo consiste em dois foguetões com o objetivo de chegar mais vezes ao topo. Cada vez que um foguetão chegar ao topo, a sua pontuação aumenta numa unidade.
-Existem obstáculos pelo caminho, pelo que, os foguetões não podem colidir com eles sob pena de voltarem à posição inicial.
-Há uma barra que divide o ecrã e que dita o tempo que falta para o jogo acabar. O jogo acaba quando o tempo acabar, ou seja, quando a barra chegar ao fim.
-Este projeto foi desenvolvido por Hugo Castro (up202006770@fe.up.pt) e Luís Paiva (up202006094@fe.up.pt) para LDTS 2021/2022.
+In a race against your opponent you have to reach the top to score one point. Along the way you can´t collide with the obstacles.
+If you score more points that your opponent, before the time runs out you win!
+This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva (up202006094@fe.up.pt) for LDTS 2021/2022.
 
-- **Move** -
+### IMPLEMENTED FEATURES
+
+- **MoveUp** - The both rockets will move up, first rocket when 'w' is pressed and the second when ArrowUp is pressed.
+- **MoveDown** - The both rockets will move down, first rocket when 's' is pressed and the second when ArrowDown is pressed.
+
+### PLANNED FEATURES
+
+>
+
+### DESIGN
+
+>
