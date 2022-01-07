@@ -16,7 +16,7 @@ public class Obstacle {
     }
 
     public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#8B0000"));
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFAFA"));
         graphics.enableModifiers(SGR.BOLD);
         graphics.putString(new TerminalPosition(position.getX(), position.getY()), "O");
     }
