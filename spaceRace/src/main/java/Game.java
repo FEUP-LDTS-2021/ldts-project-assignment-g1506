@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Game {
     Screen screen = null;
     int width = 120;
-    int height = 35;
+    int height = 40;
     Display display = new Display(width, height);
 
     public Game() {
@@ -21,23 +21,26 @@ public class Game {
             DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
             Terminal terminal = terminalFactory.createTerminal();
             screen = new TerminalScreen(terminal);
-            screen.setCursorPosition(null); // we don't need a cursor
-            screen.startScreen(); // screens must be started
-            screen.doResizeIfNecessary(); // resize screen if necessary
+            screen.setCursorPosition(null);
+            screen.startScreen();
+            screen.doResizeIfNecessary();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-        public void processKey (KeyStroke key){
+        public void processKey (KeyStroke key) {
             switch (key.getKeyType()) {
-                //case ArrowUp -> arena.moveHero(arena.moveUp());
-                //case ArrowDown -> arena.moveHero(arena.moveDown());
-                //case ArrowLeft -> arena.moveHero(arena.moveLeft());
-                //case ArrowRight -> arena.moveHero(arena.moveRight());
+                case ArrowUp -> display.moveRocket2(display.moveUp2());
+                case ArrowDown -> display.moveRocket2(display.moveDown2());
             }
-
+            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'w') {
+                display.moveRocket1(display.moveUp1());
+            }
+            if (key.getKeyType() == KeyType.Character && key.getCharacter() == 's') {
+                display.moveRocket1(display.moveDown1());
+            }
         }
 
         private void draw () throws IOException {
@@ -50,6 +53,7 @@ public class Game {
             while (true) {
                 draw();
                 KeyStroke key = screen.readInput();
+
                 processKey(key);
 
                 if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') {
