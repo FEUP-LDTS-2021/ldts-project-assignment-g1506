@@ -13,6 +13,7 @@ public class Display {
     private Rocket rocket1;
     private Rocket rocket2;
     private List<Obstacle> obstacles;
+    private List<Wall> walls;
 
     public Display(int width, int height){
         this.width = width;
@@ -20,6 +21,7 @@ public class Display {
         rocket1 = new Rocket(width/3,height-1);
         rocket2 = new Rocket((width/3)*2,height-1);
         obstacles = createObstacles();
+        walls = createWalls();
     }
 
     public int getWidth(){
@@ -51,7 +53,6 @@ public class Display {
     public void moveRocket1(Position position){
         rocket1.setPosition(position);
     }
-
     public void moveRocket2(Position position){
         rocket2.setPosition(position);
     }
@@ -68,6 +69,16 @@ public class Display {
         return obstacles;
     }
 
+    public List<Wall> createWalls(){
+        List<Wall> walls = new ArrayList<>();
+
+        for(int i = height;  i > height/3 ; i--){
+            Wall wall = new Wall(width/2,i);
+            walls.add(wall);
+        }
+        return walls;
+    }
+
     public void draw(TextGraphics graphics) {
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
         rocket1.draw(graphics);
@@ -76,5 +87,10 @@ public class Display {
         for(Obstacle obstacle: obstacles) {
             obstacle.draw(graphics);
         }
+
+        for(Wall wall: walls) {
+            wall.draw(graphics);
+        }
+
     }
 }
