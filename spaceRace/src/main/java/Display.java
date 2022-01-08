@@ -2,7 +2,6 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -49,7 +48,6 @@ public class Display {
     public Position moveDown2(){
         return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()+1);
     }
-
     public void moveRocket1(Position position){
         rocket1.setPosition(position);
     }
