@@ -63,9 +63,9 @@ public class Display {
             Obstacle obs = new Obstacle(rand.nextInt(width), i);
             obstacles.add(obs);
         }
-
         return obstacles;
     }
+
 
     public List<Wall> createWalls(){
         List<Wall> walls = new ArrayList<>();
