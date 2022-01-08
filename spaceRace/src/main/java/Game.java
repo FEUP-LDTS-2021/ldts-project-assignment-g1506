@@ -10,11 +10,14 @@ import java.io.IOException;
 
 public class Game {
     Screen screen = null;
-    int width = 120;
-    int height = 40;
-    Display display = new Display(width, height);
+    int width;
+    int height;
+    Display display;
 
-    public Game() {
+    public Game(int x, int y) {
+        width = x;
+        height = y;
+        display = new Display(x, y);
 
         try {
             TerminalSize terminalSize = new TerminalSize(width, height);
@@ -63,6 +66,8 @@ public class Game {
             screen.clear();
             display.draw(screen.newTextGraphics());
             screen.refresh();
+            System.out.println(width);
+            System.out.println(height);
         }
 
         public void run () throws IOException {
