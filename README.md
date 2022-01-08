@@ -1,6 +1,6 @@
 # ldts-project-assignment-g1506
 ldts-project-assignment-g1506 created by GitHub Classroom
-## LDTS_1506 - <SPACE RACE>
+## LDTS_1506 <SPACE RACE>
 
 In a race against your opponent you have to reach the top to score one point. Along the way you can´t collide with the obstacles.
 If you score more points that your opponent, before the time runs out you win!
