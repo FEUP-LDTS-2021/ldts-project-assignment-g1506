@@ -10,7 +10,10 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
 
 - **Moving Up** - The rocket number 1 will move up when 'w' is pressed, and the rocket number 2 will move up when Arrow Up is pressed.
 - **Moving Down** - The rocket number 1 will move down when 's' is pressed and the rocket number 2 will move down when Arrow Down is pressed.
-  ![image](https://user-images.githubusercontent.com/78104669/148663156-3b1c9bda-8e53-49df-8583-3182ae370494.png)
+
+  ![image](https://user-images.githubusercontent.com/78104669/148663193-7cf36942-92de-4c83-8206-20f6da60b303.png)
+  
+  ![image](https://user-images.githubusercontent.com/78104669/148663210-31873a2c-914c-4a18-87ad-ff4092fdcb75.png)
 
 ### PLANNED FEATURES
 
