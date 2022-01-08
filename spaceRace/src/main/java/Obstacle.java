@@ -3,18 +3,23 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Obstacle {
-    Position position = new Position();
+public class Obstacle extends Member {
 
     public Obstacle(int x, int y){
-        position.setX(x);
-        position.setY(y);
+        super(x,y);
     }
 
-    public Position getPosition(){
-        return position;
+    @Override
+    public Position getPosition() {
+        return super.getPosition();
     }
 
+    @Override
+    public void setPosition(Position position) {
+        super.setPosition(position);
+    }
+
+    @Override
     public void draw(TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString("#FFFAFA"));
         graphics.enableModifiers(SGR.BOLD);

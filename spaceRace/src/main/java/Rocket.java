@@ -3,22 +3,23 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Rocket {
-    Position position = new Position();
+public class Rocket extends Member{
 
     public Rocket(int x, int y){
-        position.setX(x);
-        position.setY(y);
+        super(x,y);
     }
 
+    @Override
     public Position getPosition(){
-        return position;
+        return super.getPosition();
     }
 
+    @Override
     public void setPosition(Position position){
-        this.position = position;
+        super.setPosition(position);
     }
 
+    @Override
     public void draw(TextGraphics graphics){
         graphics.setForegroundColor(TextColor.Factory.fromString("#FFFF33"));
         graphics.enableModifiers(SGR.BOLD);

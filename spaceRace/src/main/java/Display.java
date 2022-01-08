@@ -79,6 +79,7 @@ public class Display {
 
     public void draw(TextGraphics graphics) {
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), ' ');
+
         rocket1.draw(graphics);
         rocket2.draw(graphics);
 
