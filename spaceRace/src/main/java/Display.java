@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Random;
 
 public class Display {
-    private int width; // largura
-    private int height; //altura
-    private Rocket rocket1;
-    private Rocket rocket2;
+    private int width;
+    private int height;
+    public Rocket rocket1;
+    public Rocket rocket2;
     private List<Obstacle> obstacles;
     private List<Wall> walls;
 
@@ -31,23 +31,15 @@ public class Display {
         return height;
     }
 
-    public Position moveUp1(){
-        Position pos = new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()-1);
-        rocket1.setPosition(pos);
-        return pos;
-    }
-    public Position moveDown1(){
-        Position pos = new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()+1);
-        rocket1.setPosition(pos);
-        return pos;
-    }
-
+    public Position moveUp1(){return new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()-1);}
+    public Position moveDown1(){return new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()+1);}
     public Position moveUp2(){
         return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()-1);
     }
     public Position moveDown2(){
         return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()+1);
     }
+
     public void moveRocket1(Position position){
         rocket1.setPosition(position);
     }
@@ -70,7 +62,7 @@ public class Display {
     public List<Wall> createWalls(){
         List<Wall> walls = new ArrayList<>();
 
-        for(int i = height;  i > height/3 ; i--){
+        for(int i = height-1;  i > 0 ; i--){
             Wall wall = new Wall(width/2,i);
             walls.add(wall);
         }

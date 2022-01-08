@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GameTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-08T22:47:14" hostname="LAPTOP-LMOCJUM2" time="0.369">
+  <properties/>
+  <testcase name="sizeDisplay1()" classname="GameTest" time="0.247"/>
+  <testcase name="sizeGame1()" classname="GameTest" time="0.039"/>
+  <testcase name="sizeGame2()" classname="GameTest" time="0.04"/>
+  <testcase name="sizeGame3()" classname="GameTest" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
