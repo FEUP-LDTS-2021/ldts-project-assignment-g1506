@@ -41,9 +41,6 @@ A way to improve the code would be the removal of the duplicate code and impleme
 ![image](https://user-images.githubusercontent.com/78104669/148666486-fc0a72a5-bc20-4914-8e55-d45d49e09bff.png)
 
 [Coverage Report ](https:spaceRace/CoverageReport/index.html)
-  
-#### Mutation Report
-  
 
 ### SELF-EVALUATION
 -Hugo Castro: 50%.
