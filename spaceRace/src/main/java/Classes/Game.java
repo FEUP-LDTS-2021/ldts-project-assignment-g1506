@@ -1,3 +1,6 @@
+package Classes;
+
+import Classes.Display;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -12,7 +15,7 @@ public class Game {
     Screen screen = null;
     int width;
     int height;
-    Display display;
+    public Display display;
 
     public Game(int x, int y) {
         width = x;
@@ -58,8 +61,6 @@ public class Game {
             screen.clear();
             display.draw(screen.newTextGraphics());
             screen.refresh();
-            System.out.println(width);
-            System.out.println(height);
         }
 
         public void run () throws IOException {

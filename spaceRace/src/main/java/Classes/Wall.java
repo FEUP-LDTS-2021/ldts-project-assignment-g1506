@@ -1,9 +1,13 @@
+package Classes;
+
+import Classes.Member;
+import Classes.Position;
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Wall extends Member{
+public class Wall extends Member {
 
     public Wall(int x, int y){
         super(x,y);

@@ -1,3 +1,7 @@
+import Classes.Game;
+import Classes.Obstacle;
+import Classes.Position;
+import Classes.Wall;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

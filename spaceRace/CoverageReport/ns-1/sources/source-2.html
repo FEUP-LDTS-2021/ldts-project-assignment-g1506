@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Display</title>
+  <title>Coverage Report > Classes.Display</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,7 +20,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">&lt;empty package name&gt;</a>
 </div>
 
-<h1>Coverage Summary for Class: Display (&lt;empty package name&gt;)</h1>
+<h1>Coverage Summary for Class: Classes.Display (&lt;empty package name&gt;)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,7 +39,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Display</td>
+  <td class="name">Classes.Display</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -81,19 +81,19 @@ Current scope:     <a href="../../index.html">all classes</a>
 <i class="no-highlight">6</i>&nbsp;import java.util.List;
 <i class="no-highlight">7</i>&nbsp;import java.util.Random;
 <i class="no-highlight">8</i>&nbsp;
-<i class="no-highlight">9</i>&nbsp;public class Display {
+<i class="no-highlight">9</i>&nbsp;public class Classes.Display {
 <i class="no-highlight">10</i>&nbsp;    private int width;
 <i class="no-highlight">11</i>&nbsp;    private int height;
-<i class="no-highlight">12</i>&nbsp;    public Rocket rocket1;
-<i class="no-highlight">13</i>&nbsp;    public Rocket rocket2;
-<i class="no-highlight">14</i>&nbsp;    private List&lt;Obstacle&gt; obstacles;
-<i class="no-highlight">15</i>&nbsp;    private List&lt;Wall&gt; walls;
+<i class="no-highlight">12</i>&nbsp;    public Classes.Rocket rocket1;
+<i class="no-highlight">13</i>&nbsp;    public Classes.Rocket rocket2;
+<i class="no-highlight">14</i>&nbsp;    private List&lt;Classes.Obstacle&gt; obstacles;
+<i class="no-highlight">15</i>&nbsp;    private List&lt;Classes.Wall&gt; walls;
 <i class="no-highlight">16</i>&nbsp;
-<b class="fc"><i class="no-highlight">17</i>&nbsp;    public Display(int width, int height){</b>
+<b class="fc"><i class="no-highlight">17</i>&nbsp;    public Classes.Display(int width, int height){</b>
 <b class="fc"><i class="no-highlight">18</i>&nbsp;        this.width = width;</b>
 <b class="fc"><i class="no-highlight">19</i>&nbsp;        this.height = height;</b>
-<b class="fc"><i class="no-highlight">20</i>&nbsp;        rocket1 = new Rocket(width/3,height-1);</b>
-<b class="fc"><i class="no-highlight">21</i>&nbsp;        rocket2 = new Rocket((width/3)*2,height-1);</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        rocket1 = new Classes.Rocket(width/3,height-1);</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        rocket2 = new Classes.Rocket((width/3)*2,height-1);</b>
 <b class="fc"><i class="no-highlight">22</i>&nbsp;        obstacles = createObstacles();</b>
 <b class="fc"><i class="no-highlight">23</i>&nbsp;        walls = createWalls();</b>
 <i class="no-highlight">24</i>&nbsp;    }
@@ -106,39 +106,39 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc"><i class="no-highlight">31</i>&nbsp;        return height;</b>
 <i class="no-highlight">32</i>&nbsp;    }
 <i class="no-highlight">33</i>&nbsp;
-<b class="fc"><i class="no-highlight">34</i>&nbsp;    public Position moveUp1(){return new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()-1);}</b>
-<b class="fc"><i class="no-highlight">35</i>&nbsp;    public Position moveDown1(){return new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()+1);}</b>
-<i class="no-highlight">36</i>&nbsp;    public Position moveUp2(){
-<b class="fc"><i class="no-highlight">37</i>&nbsp;        return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()-1);</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;    public Classes.Position moveUp1(){return new Classes.Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()-1);}</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;    public Classes.Position moveDown1(){return new Classes.Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()+1);}</b>
+<i class="no-highlight">36</i>&nbsp;    public Classes.Position moveUp2(){
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        return new Classes.Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()-1);</b>
 <i class="no-highlight">38</i>&nbsp;    }
-<i class="no-highlight">39</i>&nbsp;    public Position moveDown2(){
-<b class="fc"><i class="no-highlight">40</i>&nbsp;        return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()+1);</b>
+<i class="no-highlight">39</i>&nbsp;    public Classes.Position moveDown2(){
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        return new Classes.Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()+1);</b>
 <i class="no-highlight">41</i>&nbsp;    }
 <i class="no-highlight">42</i>&nbsp;
-<i class="no-highlight">43</i>&nbsp;    public void moveRocket1(Position position){
+<i class="no-highlight">43</i>&nbsp;    public void moveRocket1(Classes.Position position){
 <b class="fc"><i class="no-highlight">44</i>&nbsp;        rocket1.setPosition(position);</b>
 <i class="no-highlight">45</i>&nbsp;    }
-<i class="no-highlight">46</i>&nbsp;    public void moveRocket2(Position position){
+<i class="no-highlight">46</i>&nbsp;    public void moveRocket2(Classes.Position position){
 <b class="fc"><i class="no-highlight">47</i>&nbsp;        rocket2.setPosition(position);</b>
 <i class="no-highlight">48</i>&nbsp;    }
 <i class="no-highlight">49</i>&nbsp;
-<i class="no-highlight">50</i>&nbsp;    public List&lt;Obstacle&gt; createObstacles(){
-<b class="fc"><i class="no-highlight">51</i>&nbsp;        List&lt;Obstacle&gt; obstacles = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">50</i>&nbsp;    public List&lt;Classes.Obstacle&gt; createObstacles(){
+<b class="fc"><i class="no-highlight">51</i>&nbsp;        List&lt;Classes.Obstacle&gt; obstacles = new ArrayList&lt;&gt;();</b>
 <i class="no-highlight">52</i>&nbsp;
 <b class="fc"><i class="no-highlight">53</i>&nbsp;        for(int i = 0; i&lt; height - 8 ; i++){</b>
 <b class="fc"><i class="no-highlight">54</i>&nbsp;            Random rand = new Random();</b>
-<b class="fc"><i class="no-highlight">55</i>&nbsp;            Obstacle obs = new Obstacle(rand.nextInt(width), i);</b>
+<b class="fc"><i class="no-highlight">55</i>&nbsp;            Classes.Obstacle obs = new Classes.Obstacle(rand.nextInt(width), i);</b>
 <b class="fc"><i class="no-highlight">56</i>&nbsp;            obstacles.add(obs);</b>
 <i class="no-highlight">57</i>&nbsp;        }
 <b class="fc"><i class="no-highlight">58</i>&nbsp;        return obstacles;</b>
 <i class="no-highlight">59</i>&nbsp;    }
 <i class="no-highlight">60</i>&nbsp;
 <i class="no-highlight">61</i>&nbsp;
-<i class="no-highlight">62</i>&nbsp;    public List&lt;Wall&gt; createWalls(){
-<b class="fc"><i class="no-highlight">63</i>&nbsp;        List&lt;Wall&gt; walls = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">62</i>&nbsp;    public List&lt;Classes.Wall&gt; createWalls(){
+<b class="fc"><i class="no-highlight">63</i>&nbsp;        List&lt;Classes.Wall&gt; walls = new ArrayList&lt;&gt;();</b>
 <i class="no-highlight">64</i>&nbsp;
 <b class="fc"><i class="no-highlight">65</i>&nbsp;        for(int i = height-1;  i &gt; 0 ; i--){</b>
-<b class="fc"><i class="no-highlight">66</i>&nbsp;            Wall wall = new Wall(width/2,i);</b>
+<b class="fc"><i class="no-highlight">66</i>&nbsp;            Classes.Wall wall = new Classes.Wall(width/2,i);</b>
 <b class="fc"><i class="no-highlight">67</i>&nbsp;            walls.add(wall);</b>
 <i class="no-highlight">68</i>&nbsp;        }
 <b class="fc"><i class="no-highlight">69</i>&nbsp;        return walls;</b>
@@ -152,11 +152,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc"><i class="no-highlight">77</i>&nbsp;        rocket1.draw(graphics);</b>
 <b class="nc"><i class="no-highlight">78</i>&nbsp;        rocket2.draw(graphics);</b>
 <i class="no-highlight">79</i>&nbsp;
-<b class="nc"><i class="no-highlight">80</i>&nbsp;        for(Obstacle obstacle: obstacles) {</b>
+<b class="nc"><i class="no-highlight">80</i>&nbsp;        for(Classes.Obstacle obstacle: obstacles) {</b>
 <b class="nc"><i class="no-highlight">81</i>&nbsp;            obstacle.draw(graphics);</b>
 <b class="nc"><i class="no-highlight">82</i>&nbsp;        }</b>
 <i class="no-highlight">83</i>&nbsp;
-<b class="nc"><i class="no-highlight">84</i>&nbsp;        for(Wall wall: walls) {</b>
+<b class="nc"><i class="no-highlight">84</i>&nbsp;        for(Classes.Wall wall: walls) {</b>
 <b class="nc"><i class="no-highlight">85</i>&nbsp;            wall.draw(graphics);</b>
 <b class="nc"><i class="no-highlight">86</i>&nbsp;        }</b>
 <i class="no-highlight">87</i>&nbsp;
