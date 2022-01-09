@@ -37,7 +37,8 @@ A way to improve the code would be the removal of the duplicate code and impleme
 ### TESTING
   
 #### Coverage Report
-![image](https://user-images.githubusercontent.com/78104669/148665118-24bcd794-16a6-4c02-afe6-e8e94a99e51e.png)
+  
+![image](https://user-images.githubusercontent.com/78104669/148666486-fc0a72a5-bc20-4914-8e55-d45d49e09bff.png)
 
 [Coverage Report ](https:spaceRace/CoverageReport/index.html)
   
