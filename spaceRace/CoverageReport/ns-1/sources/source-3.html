@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Classes.Game</title>
+  <title>Coverage Report > Game</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -17,10 +17,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">&lt;empty package name&gt;</a>
+    <a href="../index.html">Classes</a>
 </div>
 
-<h1>Coverage Summary for Class: Classes.Game (&lt;empty package name&gt;)</h1>
+<h1>Coverage Summary for Class: Game (Classes)</h1>
 
 <table class="coverageStats">
 
@@ -36,7 +36,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Classes.Game</td>
+  <td class="name">Game</td>
 <td class="coverageStat">
   <span class="percent">
     50%
@@ -47,15 +47,15 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    40,5%
+    42,9%
   </span>
   <span class="absValue">
-    (15/37)
+    (15/35)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">Classes.Game$1</td>
+    <td class="name">Game$1</td>
 <td class="coverageStat">
   <span class="percent">
     0%
@@ -85,10 +85,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    39,5%
+    41,7%
   </span>
   <span class="absValue">
-    (15/38)
+    (15/36)
   </span>
 </td>
 </tr>
@@ -99,85 +99,86 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
-<i class="no-highlight">2</i>&nbsp;import com.googlecode.lanterna.input.KeyStroke;
-<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.input.KeyType;
-<i class="no-highlight">4</i>&nbsp;import com.googlecode.lanterna.screen.Screen;
-<i class="no-highlight">5</i>&nbsp;import com.googlecode.lanterna.screen.TerminalScreen;
-<i class="no-highlight">6</i>&nbsp;import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-<i class="no-highlight">7</i>&nbsp;import com.googlecode.lanterna.terminal.Terminal;
-<i class="no-highlight">8</i>&nbsp;
-<i class="no-highlight">9</i>&nbsp;import java.io.IOException;
-<i class="no-highlight">10</i>&nbsp;
-<i class="no-highlight">11</i>&nbsp;public class Classes.Game {
-<b class="fc"><i class="no-highlight">12</i>&nbsp;    Screen screen = null;</b>
-<i class="no-highlight">13</i>&nbsp;    int width;
-<i class="no-highlight">14</i>&nbsp;    int height;
-<i class="no-highlight">15</i>&nbsp;    Classes.Display display;
-<i class="no-highlight">16</i>&nbsp;
-<b class="fc"><i class="no-highlight">17</i>&nbsp;    public Classes.Game(int x, int y) {</b>
-<b class="fc"><i class="no-highlight">18</i>&nbsp;        width = x;</b>
-<b class="fc"><i class="no-highlight">19</i>&nbsp;        height = y;</b>
-<b class="fc"><i class="no-highlight">20</i>&nbsp;        display = new Classes.Display(x, y);</b>
-<i class="no-highlight">21</i>&nbsp;
-<i class="no-highlight">22</i>&nbsp;        try {
-<b class="fc"><i class="no-highlight">23</i>&nbsp;            TerminalSize terminalSize = new TerminalSize(width, height);</b>
-<b class="fc"><i class="no-highlight">24</i>&nbsp;            DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);</b>
-<b class="fc"><i class="no-highlight">25</i>&nbsp;            Terminal terminal = terminalFactory.createTerminal();</b>
-<b class="fc"><i class="no-highlight">26</i>&nbsp;            screen = new TerminalScreen(terminal);</b>
-<b class="fc"><i class="no-highlight">27</i>&nbsp;            screen.setCursorPosition(null);</b>
-<b class="fc"><i class="no-highlight">28</i>&nbsp;            screen.startScreen();</b>
-<b class="fc"><i class="no-highlight">29</i>&nbsp;            screen.doResizeIfNecessary();</b>
-<i class="no-highlight">30</i>&nbsp;
-<b class="nc"><i class="no-highlight">31</i>&nbsp;        } catch (IOException e) {</b>
-<b class="nc"><i class="no-highlight">32</i>&nbsp;            e.printStackTrace();</b>
-<b class="fc"><i class="no-highlight">33</i>&nbsp;        }</b>
-<i class="no-highlight">34</i>&nbsp;    }
-<i class="no-highlight">35</i>&nbsp;
-<i class="no-highlight">36</i>&nbsp;        public void processKey (KeyStroke key) {
-<b class="nc"><i class="no-highlight">37</i>&nbsp;            switch (key.getKeyType()) {</b>
-<b class="nc"><i class="no-highlight">38</i>&nbsp;                case ArrowUp -&gt; display.moveRocket2(display.moveUp2());</b>
-<b class="nc"><i class="no-highlight">39</i>&nbsp;                case ArrowDown -&gt; display.moveRocket2(display.moveDown2());</b>
-<i class="no-highlight">40</i>&nbsp;            }
-<b class="nc"><i class="no-highlight">41</i>&nbsp;            if (key.getKeyType() == KeyType.Character &amp;&amp; key.getCharacter() == &#39;w&#39;) {</b>
-<b class="nc"><i class="no-highlight">42</i>&nbsp;                display.moveRocket1(display.moveUp1());</b>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Classes;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import Classes.Display;
+<i class="no-highlight">4</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
+<i class="no-highlight">5</i>&nbsp;import com.googlecode.lanterna.input.KeyStroke;
+<i class="no-highlight">6</i>&nbsp;import com.googlecode.lanterna.input.KeyType;
+<i class="no-highlight">7</i>&nbsp;import com.googlecode.lanterna.screen.Screen;
+<i class="no-highlight">8</i>&nbsp;import com.googlecode.lanterna.screen.TerminalScreen;
+<i class="no-highlight">9</i>&nbsp;import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+<i class="no-highlight">10</i>&nbsp;import com.googlecode.lanterna.terminal.Terminal;
+<i class="no-highlight">11</i>&nbsp;
+<i class="no-highlight">12</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;public class Game {
+<b class="fc"><i class="no-highlight">15</i>&nbsp;    Screen screen = null;</b>
+<i class="no-highlight">16</i>&nbsp;    int width;
+<i class="no-highlight">17</i>&nbsp;    int height;
+<i class="no-highlight">18</i>&nbsp;    public Display display;
+<i class="no-highlight">19</i>&nbsp;
+<b class="fc"><i class="no-highlight">20</i>&nbsp;    public Game(int x, int y) {</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        width = x;</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;        height = y;</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        display = new Display(x, y);</b>
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;        try {
+<b class="fc"><i class="no-highlight">26</i>&nbsp;            TerminalSize terminalSize = new TerminalSize(width, height);</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;            DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;            Terminal terminal = terminalFactory.createTerminal();</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;            screen = new TerminalScreen(terminal);</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;            screen.setCursorPosition(null);</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;            screen.startScreen();</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;            screen.doResizeIfNecessary();</b>
+<i class="no-highlight">33</i>&nbsp;
+<b class="nc"><i class="no-highlight">34</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i class="no-highlight">35</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        }</b>
+<i class="no-highlight">37</i>&nbsp;    }
+<i class="no-highlight">38</i>&nbsp;
+<i class="no-highlight">39</i>&nbsp;        public void processKey (KeyStroke key) {
+<b class="nc"><i class="no-highlight">40</i>&nbsp;            switch (key.getKeyType()) {</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;                case ArrowUp -&gt; display.moveRocket2(display.moveUp2());</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;                case ArrowDown -&gt; display.moveRocket2(display.moveDown2());</b>
 <i class="no-highlight">43</i>&nbsp;            }
-<b class="nc"><i class="no-highlight">44</i>&nbsp;            if (key.getKeyType() == KeyType.Character &amp;&amp; key.getCharacter() == &#39;s&#39;) {</b>
-<b class="nc"><i class="no-highlight">45</i>&nbsp;                display.moveRocket1(display.moveDown1());</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;            if (key.getKeyType() == KeyType.Character &amp;&amp; key.getCharacter() == &#39;w&#39;) {</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;                display.moveRocket1(display.moveUp1());</b>
 <i class="no-highlight">46</i>&nbsp;            }
-<i class="no-highlight">47</i>&nbsp;        }
-<i class="no-highlight">48</i>&nbsp;
-<i class="no-highlight">49</i>&nbsp;        public int getWidth(){
-<b class="fc"><i class="no-highlight">50</i>&nbsp;            return width;</b>
-<i class="no-highlight">51</i>&nbsp;        }
-<i class="no-highlight">52</i>&nbsp;
-<i class="no-highlight">53</i>&nbsp;        public int getHeight(){
-<b class="fc"><i class="no-highlight">54</i>&nbsp;            return height;</b>
-<i class="no-highlight">55</i>&nbsp;        }
-<i class="no-highlight">56</i>&nbsp;
-<i class="no-highlight">57</i>&nbsp;        private void draw () throws IOException {
-<b class="nc"><i class="no-highlight">58</i>&nbsp;            screen.clear();</b>
-<b class="nc"><i class="no-highlight">59</i>&nbsp;            display.draw(screen.newTextGraphics());</b>
-<b class="nc"><i class="no-highlight">60</i>&nbsp;            screen.refresh();</b>
-<b class="nc"><i class="no-highlight">61</i>&nbsp;            System.out.println(width);</b>
-<b class="nc"><i class="no-highlight">62</i>&nbsp;            System.out.println(height);</b>
-<i class="no-highlight">63</i>&nbsp;        }
-<i class="no-highlight">64</i>&nbsp;
-<i class="no-highlight">65</i>&nbsp;        public void run () throws IOException {
-<i class="no-highlight">66</i>&nbsp;            while (true) {
-<b class="nc"><i class="no-highlight">67</i>&nbsp;                draw();</b>
-<b class="nc"><i class="no-highlight">68</i>&nbsp;                KeyStroke key = screen.readInput();</b>
-<i class="no-highlight">69</i>&nbsp;
-<b class="nc"><i class="no-highlight">70</i>&nbsp;                processKey(key);</b>
-<i class="no-highlight">71</i>&nbsp;
-<b class="nc"><i class="no-highlight">72</i>&nbsp;                if (key.getKeyType() == KeyType.Character &amp;&amp; key.getCharacter() == &#39;q&#39;) {</b>
-<b class="nc"><i class="no-highlight">73</i>&nbsp;                    screen.close();</b>
-<i class="no-highlight">74</i>&nbsp;                }
-<b class="nc"><i class="no-highlight">75</i>&nbsp;                if (key.getKeyType() == KeyType.EOF)</b>
-<b class="nc"><i class="no-highlight">76</i>&nbsp;                    break;</b>
-<b class="nc"><i class="no-highlight">77</i>&nbsp;            }</b>
-<i class="no-highlight">78</i>&nbsp;        }
-<i class="no-highlight">79</i>&nbsp;}
+<b class="nc"><i class="no-highlight">47</i>&nbsp;            if (key.getKeyType() == KeyType.Character &amp;&amp; key.getCharacter() == &#39;s&#39;) {</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;                display.moveRocket1(display.moveDown1());</b>
+<i class="no-highlight">49</i>&nbsp;            }
+<i class="no-highlight">50</i>&nbsp;        }
+<i class="no-highlight">51</i>&nbsp;
+<i class="no-highlight">52</i>&nbsp;        public int getWidth(){
+<b class="fc"><i class="no-highlight">53</i>&nbsp;            return width;</b>
+<i class="no-highlight">54</i>&nbsp;        }
+<i class="no-highlight">55</i>&nbsp;
+<i class="no-highlight">56</i>&nbsp;        public int getHeight(){
+<b class="fc"><i class="no-highlight">57</i>&nbsp;            return height;</b>
+<i class="no-highlight">58</i>&nbsp;        }
+<i class="no-highlight">59</i>&nbsp;
+<i class="no-highlight">60</i>&nbsp;        private void draw () throws IOException {
+<b class="nc"><i class="no-highlight">61</i>&nbsp;            screen.clear();</b>
+<b class="nc"><i class="no-highlight">62</i>&nbsp;            display.draw(screen.newTextGraphics());</b>
+<b class="nc"><i class="no-highlight">63</i>&nbsp;            screen.refresh();</b>
+<i class="no-highlight">64</i>&nbsp;        }
+<i class="no-highlight">65</i>&nbsp;
+<i class="no-highlight">66</i>&nbsp;        public void run () throws IOException {
+<i class="no-highlight">67</i>&nbsp;            while (true) {
+<b class="nc"><i class="no-highlight">68</i>&nbsp;                draw();</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                KeyStroke key = screen.readInput();</b>
+<i class="no-highlight">70</i>&nbsp;
+<b class="nc"><i class="no-highlight">71</i>&nbsp;                processKey(key);</b>
+<i class="no-highlight">72</i>&nbsp;
+<b class="nc"><i class="no-highlight">73</i>&nbsp;                if (key.getKeyType() == KeyType.Character &amp;&amp; key.getCharacter() == &#39;q&#39;) {</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;                    screen.close();</b>
+<i class="no-highlight">75</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">76</i>&nbsp;                if (key.getKeyType() == KeyType.EOF)</b>
+<b class="nc"><i class="no-highlight">77</i>&nbsp;                    break;</b>
+<b class="nc"><i class="no-highlight">78</i>&nbsp;            }</b>
+<i class="no-highlight">79</i>&nbsp;        }
+<i class="no-highlight">80</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -204,7 +205,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-09 00:59</div>
+    <div style="float:right;">generated on 2022-01-09 02:09</div>
 </div>
 </body>
 </html>

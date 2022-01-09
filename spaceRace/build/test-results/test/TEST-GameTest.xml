@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GameTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-09T01:40:03" hostname="LAPTOP-LMOCJUM2" time="0.55">
+<testsuite name="GameTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-09T02:08:21" hostname="LAPTOP-LMOCJUM2" time="0.285">
   <properties/>
-  <testcase name="sizeDisplay1()" classname="GameTest" time="0.33"/>
-  <testcase name="sizeGame1()" classname="GameTest" time="0.089"/>
-  <testcase name="sizeGame2()" classname="GameTest" time="0.082"/>
-  <testcase name="sizeGame3()" classname="GameTest" time="0.043"/>
+  <testcase name="sizeDisplay1()" classname="GameTest" time="0.081"/>
+  <testcase name="sizeGame1()" classname="GameTest" time="0.082"/>
+  <testcase name="sizeGame2()" classname="GameTest" time="0.06"/>
+  <testcase name="sizeGame3()" classname="GameTest" time="0.053"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

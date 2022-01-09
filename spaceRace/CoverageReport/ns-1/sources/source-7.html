@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Classes.Rocket</title>
+  <title>Coverage Report > Rocket</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -17,10 +17,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">&lt;empty package name&gt;</a>
+    <a href="../index.html">Classes</a>
 </div>
 
-<h1>Coverage Summary for Class: Classes.Rocket (&lt;empty package name&gt;)</h1>
+<h1>Coverage Summary for Class: Rocket (Classes)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,7 +39,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Classes.Rocket</td>
+  <td class="name">Rocket</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -73,34 +73,36 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;import com.googlecode.lanterna.SGR;
-<i class="no-highlight">2</i>&nbsp;import com.googlecode.lanterna.TerminalPosition;
-<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.TextColor;
-<i class="no-highlight">4</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
-<i class="no-highlight">5</i>&nbsp;
-<i class="no-highlight">6</i>&nbsp;public class Classes.Rocket extends Classes.Member{
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Classes;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.SGR;
+<i class="no-highlight">4</i>&nbsp;import com.googlecode.lanterna.TerminalPosition;
+<i class="no-highlight">5</i>&nbsp;import com.googlecode.lanterna.TextColor;
+<i class="no-highlight">6</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
 <i class="no-highlight">7</i>&nbsp;
-<i class="no-highlight">8</i>&nbsp;    public Classes.Rocket(int x, int y){
-<b class="fc"><i class="no-highlight">9</i>&nbsp;        super(x,y);</b>
-<i class="no-highlight">10</i>&nbsp;    }
-<i class="no-highlight">11</i>&nbsp;
-<i class="no-highlight">12</i>&nbsp;    @Override
-<i class="no-highlight">13</i>&nbsp;    public Classes.Position getPosition(){
-<b class="fc"><i class="no-highlight">14</i>&nbsp;        return super.getPosition();</b>
-<i class="no-highlight">15</i>&nbsp;    }
-<i class="no-highlight">16</i>&nbsp;
-<i class="no-highlight">17</i>&nbsp;    @Override
-<i class="no-highlight">18</i>&nbsp;    public void setPosition(Classes.Position position){
-<b class="fc"><i class="no-highlight">19</i>&nbsp;        super.setPosition(position);</b>
-<i class="no-highlight">20</i>&nbsp;    }
-<i class="no-highlight">21</i>&nbsp;
-<i class="no-highlight">22</i>&nbsp;    @Override
-<i class="no-highlight">23</i>&nbsp;    public void draw(TextGraphics graphics){
-<b class="nc"><i class="no-highlight">24</i>&nbsp;        graphics.setForegroundColor(TextColor.Factory.fromString(&quot;#FFFF33&quot;));</b>
-<b class="nc"><i class="no-highlight">25</i>&nbsp;        graphics.enableModifiers(SGR.BOLD);</b>
-<b class="nc"><i class="no-highlight">26</i>&nbsp;        graphics.putString(new TerminalPosition(position.getX(), position.getY()), &quot;R&quot;);</b>
-<i class="no-highlight">27</i>&nbsp;    }
-<i class="no-highlight">28</i>&nbsp;}
+<i class="no-highlight">8</i>&nbsp;public class Rocket extends Member {
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;    public Rocket(int x, int y){
+<b class="fc"><i class="no-highlight">11</i>&nbsp;        super(x,y);</b>
+<i class="no-highlight">12</i>&nbsp;    }
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;    @Override
+<i class="no-highlight">15</i>&nbsp;    public Position getPosition(){
+<b class="fc"><i class="no-highlight">16</i>&nbsp;        return super.getPosition();</b>
+<i class="no-highlight">17</i>&nbsp;    }
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    @Override
+<i class="no-highlight">20</i>&nbsp;    public void setPosition(Position position){
+<b class="fc"><i class="no-highlight">21</i>&nbsp;        super.setPosition(position);</b>
+<i class="no-highlight">22</i>&nbsp;    }
+<i class="no-highlight">23</i>&nbsp;
+<i class="no-highlight">24</i>&nbsp;    @Override
+<i class="no-highlight">25</i>&nbsp;    public void draw(TextGraphics graphics){
+<b class="nc"><i class="no-highlight">26</i>&nbsp;        graphics.setForegroundColor(TextColor.Factory.fromString(&quot;#FFFF33&quot;));</b>
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        graphics.enableModifiers(SGR.BOLD);</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        graphics.putString(new TerminalPosition(position.getX(), position.getY()), &quot;R&quot;);</b>
+<i class="no-highlight">29</i>&nbsp;    }
+<i class="no-highlight">30</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -127,7 +129,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-09 00:59</div>
+    <div style="float:right;">generated on 2022-01-09 02:09</div>
 </div>
 </body>
 </html>

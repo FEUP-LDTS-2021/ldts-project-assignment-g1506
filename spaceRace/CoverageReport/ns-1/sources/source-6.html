@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Classes.Position</title>
+  <title>Coverage Report > Position</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -17,10 +17,10 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">&lt;empty package name&gt;</a>
+    <a href="../index.html">Classes</a>
 </div>
 
-<h1>Coverage Summary for Class: Classes.Position (&lt;empty package name&gt;)</h1>
+<h1>Coverage Summary for Class: Position (Classes)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,7 +39,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Classes.Position</td>
+  <td class="name">Position</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -73,37 +73,39 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;public class Classes.Position {
-<i class="no-highlight">2</i>&nbsp;    private int x;
-<i class="no-highlight">3</i>&nbsp;    private int y;
-<i class="no-highlight">4</i>&nbsp;
-<b class="nc"><i class="no-highlight">5</i>&nbsp;    public Classes.Position(){}</b>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Classes;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;public class Position {
+<i class="no-highlight">4</i>&nbsp;    private int x;
+<i class="no-highlight">5</i>&nbsp;    private int y;
 <i class="no-highlight">6</i>&nbsp;
-<b class="fc"><i class="no-highlight">7</i>&nbsp;    public Classes.Position(int x, int y){</b>
-<b class="fc"><i class="no-highlight">8</i>&nbsp;        this.x = x;</b>
-<b class="fc"><i class="no-highlight">9</i>&nbsp;        this.y = y;</b>
-<i class="no-highlight">10</i>&nbsp;    }
-<i class="no-highlight">11</i>&nbsp;
-<i class="no-highlight">12</i>&nbsp;    @Override
-<i class="no-highlight">13</i>&nbsp;    public boolean equals(Object o) {
-<b class="nc"><i class="no-highlight">14</i>&nbsp;        if (this == o) return true;</b>
-<i class="no-highlight">15</i>&nbsp;
-<b class="nc"><i class="no-highlight">16</i>&nbsp;        if (o == null) return false;</b>
+<b class="nc"><i class="no-highlight">7</i>&nbsp;    public Position(){}</b>
+<i class="no-highlight">8</i>&nbsp;
+<b class="fc"><i class="no-highlight">9</i>&nbsp;    public Position(int x, int y){</b>
+<b class="fc"><i class="no-highlight">10</i>&nbsp;        this.x = x;</b>
+<b class="fc"><i class="no-highlight">11</i>&nbsp;        this.y = y;</b>
+<i class="no-highlight">12</i>&nbsp;    }
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;    @Override
+<i class="no-highlight">15</i>&nbsp;    public boolean equals(Object o) {
+<b class="nc"><i class="no-highlight">16</i>&nbsp;        if (this == o) return true;</b>
 <i class="no-highlight">17</i>&nbsp;
-<b class="nc"><i class="no-highlight">18</i>&nbsp;        if (getClass() != o.getClass()) return false;</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;        if (o == null) return false;</b>
 <i class="no-highlight">19</i>&nbsp;
-<b class="nc"><i class="no-highlight">20</i>&nbsp;        Classes.Position p = (Classes.Position) o;</b>
-<b class="nc"><i class="no-highlight">21</i>&nbsp;        return x == p.getX() &amp;&amp; y == p.getY();</b>
-<i class="no-highlight">22</i>&nbsp;    }
-<i class="no-highlight">23</i>&nbsp;
-<b class="fc"><i class="no-highlight">24</i>&nbsp;    public int getX() {return x;}</b>
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        if (getClass() != o.getClass()) return false;</b>
+<i class="no-highlight">21</i>&nbsp;
+<b class="nc"><i class="no-highlight">22</i>&nbsp;        Position p = (Position) o;</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        return x == p.getX() &amp;&amp; y == p.getY();</b>
+<i class="no-highlight">24</i>&nbsp;    }
 <i class="no-highlight">25</i>&nbsp;
-<b class="fc"><i class="no-highlight">26</i>&nbsp;    public int getY() {return y;}</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;    public int getX() {return x;}</b>
 <i class="no-highlight">27</i>&nbsp;
-<b class="nc"><i class="no-highlight">28</i>&nbsp;    public void setX(int x) {this.x = x;}</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;    public int getY() {return y;}</b>
 <i class="no-highlight">29</i>&nbsp;
-<b class="nc"><i class="no-highlight">30</i>&nbsp;    public void setY(int y) {this.y = y;}</b>
-<i class="no-highlight">31</i>&nbsp;}
+<b class="nc"><i class="no-highlight">30</i>&nbsp;    public void setX(int x) {this.x = x;}</b>
+<i class="no-highlight">31</i>&nbsp;
+<b class="nc"><i class="no-highlight">32</i>&nbsp;    public void setY(int y) {this.y = y;}</b>
+<i class="no-highlight">33</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -130,7 +132,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-09 00:59</div>
+    <div style="float:right;">generated on 2022-01-09 02:09</div>
 </div>
 </body>
 </html>
