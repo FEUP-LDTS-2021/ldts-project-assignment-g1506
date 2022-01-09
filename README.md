@@ -17,8 +17,20 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
 
 ### PLANNED FEATURES
 
-> 
-
+- **Movement of the obstacles** - Obstacles will move horizontly.
+- **Colisions with obstacles** - When any rocket is in the same position of an obstacle, the rocket will return to the initial position.
+- **Points** - Points will be increased when one rocket reach the top.
+- **Menu** - Menu with the options.
+- **Time of the game** - A bar represents the time and goes down until the time runs out.
+  
 ### DESIGN
 
 >
+  
+#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+------
+#### Duplicate Code
+
+The 'Rocket()', 'Obstacle()', 'Wall()' classes have duplicate code.
+
+A way to improve the code would be the removal of the duplicate code and implementation of the 'Member()' abstact class. 'Rocket()', 'Obstacle()', 'Wall()' will extend this abstract class.
