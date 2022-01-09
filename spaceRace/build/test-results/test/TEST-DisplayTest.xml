@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DisplayTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-01-09T00:51:58" hostname="LAPTOP-LMOCJUM2" time="1.038">
+  <properties/>
+  <testcase name="RocketInitialPosition()" classname="DisplayTest" time="0.432"/>
+  <testcase name="moveUp()" classname="DisplayTest" time="0.076"/>
+  <testcase name="wallPosition()" classname="DisplayTest" time="0.079"/>
+  <testcase name="moveDown()" classname="DisplayTest" time="0.079"/>
+  <testcase name="numberObstacles1()" classname="DisplayTest" time="0.113"/>
+  <testcase name="numberObstacles2()" classname="DisplayTest" time="0.071"/>
+  <testcase name="numberObstacles3()" classname="DisplayTest" time="0.046"/>
+  <testcase name="numberWalls1()" classname="DisplayTest" time="0.084"/>
+  <testcase name="numberWalls2()" classname="DisplayTest" time="0.041"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

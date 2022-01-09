@@ -7,9 +7,7 @@ public abstract class Member {
         position = new Position(x,y);
     }
 
-    public Position getPosition() {
-        return position;
-    }
+    public Position getPosition() {return position;}
 
     public void setPosition(Position position) {
         this.position = position;
