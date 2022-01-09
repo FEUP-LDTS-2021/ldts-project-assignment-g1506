@@ -23,12 +23,6 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
 - **Menu** - Menu with the options.
 - **Time of the game** - A bar represents the time and goes down until the time runs out.
   
-### DESIGN
-
-  -- **Problem in Context.** See if the rocket can move to another position.
-  [Link text Here](https://link-url-here.org)
-  -- **The Pattern.** 
-  
 #### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
 #### Duplicate Code
