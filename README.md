@@ -25,6 +25,9 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
   
 ### DESIGN
 
+  -- **Problem in Context.** See if the rocket can move to another position.
+  [Link text Here](https://link-url-here.org)
+  -- **The Pattern.** 
   
 #### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
@@ -44,4 +47,5 @@ A way to improve the code would be the removal of the duplicate code and impleme
 
 ### SELF-EVALUATION
 -Hugo Castro: 50%.
+  
 -Luís Paiva: 50%.
