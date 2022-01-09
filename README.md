@@ -28,9 +28,21 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
 >
   
 #### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
-------
+
 #### Duplicate Code
 
-The 'Rocket()', 'Obstacle()', 'Wall()' classes have duplicate code.
+The 'Rocket()', 'Obstacle()' and 'Wall()' classes have duplicate code.
 
 A way to improve the code would be the removal of the duplicate code and implementation of the 'Member()' abstact class. 'Rocket()', 'Obstacle()', 'Wall()' will extend this abstract class.
+  
+### TESTING
+  
+## Coverage Report
+![image](https://user-images.githubusercontent.com/78104669/148665118-24bcd794-16a6-4c02-afe6-e8e94a99e51e.png)
+
+Link to Coverage Report : spaceRace/CoverageReport/index.html
+  
+
+### SELF-EVALUATION
+-Hugo Castro: 50%.
+-Luís Paiva: 50%.
