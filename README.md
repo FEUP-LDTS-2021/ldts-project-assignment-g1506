@@ -25,7 +25,6 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
   
 ### DESIGN
 
->
   
 #### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
@@ -37,10 +36,12 @@ A way to improve the code would be the removal of the duplicate code and impleme
   
 ### TESTING
   
-## Coverage Report
+#### Coverage Report
 ![image](https://user-images.githubusercontent.com/78104669/148665118-24bcd794-16a6-4c02-afe6-e8e94a99e51e.png)
 
 Link to Coverage Report : spaceRace/CoverageReport/index.html
+  
+#### Mutation Report
   
 
 ### SELF-EVALUATION
