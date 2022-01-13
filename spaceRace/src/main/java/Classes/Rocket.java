@@ -5,7 +5,7 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Rocket extends Member {
+public class Rocket extends Element {
 
     public Rocket(int x, int y){
         super(x,y);

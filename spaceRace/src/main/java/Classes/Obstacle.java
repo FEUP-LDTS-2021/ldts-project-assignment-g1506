@@ -1,13 +1,11 @@
 package Classes;
 
-import Classes.Member;
-import Classes.Position;
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Obstacle extends Member {
+public class Obstacle extends Element {
     boolean direction = true; // true obstacle move to right direction
 
     public Obstacle(int x, int y){

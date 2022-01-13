@@ -2,10 +2,10 @@ package Classes;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public abstract class Member {
+public abstract class Element {
     public Position position;
 
-    public Member(int x, int y){
+    public Element(int x, int y){
         position = new Position(x,y);
     }
 
