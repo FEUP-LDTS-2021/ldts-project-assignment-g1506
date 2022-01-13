@@ -13,7 +13,7 @@ public class Display {
     private int height;
     public Rocket rocket1;
     public Rocket rocket2;
-    private List<Obstacle> obstacles;
+    public List<Obstacle> obstacles;
     private List<Wall> walls;
 
     public Display(int width, int height){
@@ -51,10 +51,16 @@ public class Display {
 
     public List<Obstacle> createObstacles(){
         List<Obstacle> obstacles = new ArrayList<>();
-
+        boolean aux=true;
         for(int i = 0; i< height - 8 ; i++){
             Random rand = new Random();
             Obstacle obs = new Obstacle(rand.nextInt(width), i);
+            obs.setDirection(aux);
+
+            if(aux==true) aux = false;
+
+            else aux = true;
+
             obstacles.add(obs);
         }
         return obstacles;

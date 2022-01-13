@@ -8,9 +8,18 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
 public class Obstacle extends Member {
+    boolean direction = true; // true obstacle move to right direction
 
     public Obstacle(int x, int y){
         super(x,y);
+    }
+
+    public boolean getDirection() {
+        return direction;
+    }
+
+    public void setDirection(boolean direction) {
+        this.direction = direction;
     }
 
     @Override

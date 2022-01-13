@@ -14,7 +14,8 @@ public class DisplayTest {
     public void RocketInitialPosition(){
         int x = 120;
         int y = 40;
-        Game game = new Game(x,y);
+        int fps = 30;
+        Game game = new Game(x,y, fps);
         int width1 = game.display.rocket1.getPosition().getX();
         int height1 = game.display.rocket1.getPosition().getY();
         int width2 = game.display.rocket2.getPosition().getX();
@@ -31,7 +32,8 @@ public class DisplayTest {
     public void moveUp(){
         int x = 120;
         int y = 40;
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         Position pos1 = game1.display.rocket1.position;
         Position pos2 = game1.display.rocket2.position;
 
@@ -54,7 +56,8 @@ public class DisplayTest {
     public void moveDown(){
         int x = 120;
         int y = 40;
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         Position pos1 = game1.display.rocket1.position;
         Position pos2 = game1.display.rocket2.position;
 
@@ -77,7 +80,8 @@ public class DisplayTest {
     public void numberObstacles1(){
         int x = 120;
         int y = 40;
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         List<Obstacle> obstacles = game1.display.createObstacles();
         Assertions.assertEquals(y-8, obstacles.size());
 
@@ -86,7 +90,8 @@ public class DisplayTest {
     public void numberObstacles2(){
         int x = 100;
         int y = 30;
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         List<Obstacle> obstacles = game1.display.createObstacles();
         Assertions.assertEquals(y-8, obstacles.size());
 
@@ -95,7 +100,8 @@ public class DisplayTest {
     public void numberObstacles3(){
         int x = 90;
         int y = 20;
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         List<Obstacle> obstacles = game1.display.createObstacles();
         Assertions.assertEquals(y-8, obstacles.size());
 
@@ -106,8 +112,8 @@ public class DisplayTest {
     public void numberWalls1(){
         int x = 120;
         int y = 40;
-
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         List<Wall> walls = game1.display.createWalls();
         Assertions.assertEquals(y-1, walls.size());
     }
@@ -116,7 +122,8 @@ public class DisplayTest {
         int x = 100;
         int y = 30;
 
-        Game game1 = new Game(x, y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
 
         List<Wall> walls = game1.display.createWalls();
         Assertions.assertEquals(y-1, walls.size());
@@ -129,7 +136,8 @@ public class DisplayTest {
         int y = 30;
         boolean aux=true;
 
-        Game game1 =new Game(x,y);
+        int fps = 30;
+        Game game1 = new Game(x,y, fps);
         List<Wall> walls = game1.display.createWalls();
         int width = walls.get(0).position.getX();
         Assertions.assertEquals(x/2, width);

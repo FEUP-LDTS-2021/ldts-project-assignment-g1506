@@ -9,7 +9,8 @@ public class GameTest {
     public void sizeGame1() {
         int x=120;
         int y=40;
-        Game game = new Game(x,y);
+        int fps = 30;
+        Game game = new Game(x,y, fps);
 
         Assertions.assertEquals(x, game.getWidth());
         Assertions.assertEquals(y, game.getHeight());
@@ -18,7 +19,8 @@ public class GameTest {
     public void sizeGame2() {
         int x=100;
         int y=30;
-        Game game = new Game(x,y);
+        int fps = 30;
+        Game game = new Game(x,y, fps);
 
         Assertions.assertEquals(x, game.getWidth());
         Assertions.assertEquals(y, game.getHeight());
@@ -27,7 +29,8 @@ public class GameTest {
     public void sizeGame3() {
         int x=90;
         int y=20;
-        Game game = new Game(x,y);
+        int fps = 30;
+        Game game = new Game(x,y, fps);
 
         Assertions.assertEquals(x, game.getWidth());
         Assertions.assertEquals(y, game.getHeight());
@@ -37,7 +40,8 @@ public class GameTest {
     public void sizeDisplay1(){
         int x=120;
         int y=40;
-        Game game = new Game(x,y);
+        int fps = 30;
+        Game game = new Game(x,y, fps);
 
         Assertions.assertEquals(x, game.display.getWidth());
         Assertions.assertEquals(y, game.display.getHeight());
