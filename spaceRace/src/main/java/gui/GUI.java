@@ -1,0 +1,44 @@
+package gui;
+
+import Classes.Position;
+import com.googlecode.lanterna.graphics.TextGraphics;
+
+import java.io.IOException;
+
+public interface GUI {
+
+    enum ACTION{
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT,
+        PAUSE,
+        QUIT
+    }
+
+    TextGraphics createTextGraphics();
+
+    int getWidth();
+
+    int getHeight();
+
+    void drawBackground(TextGraphics textGraphics, String color);
+
+    void clear();
+
+    void refresh() throws IOException;
+
+    void close() throws IOException;
+
+    void addKeyBoardListener(KeyBoardObserver obs);
+
+    boolean isActive();
+
+    void drawObstacle(Position position, String color);
+
+    void drawWall(Position position, String color);
+
+    void drawRocket1(Position position, String color);
+
+    void drawRocket2(Position position, String color);
+}

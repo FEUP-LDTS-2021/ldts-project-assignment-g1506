@@ -10,7 +10,7 @@ import java.util.List;
 public class DisplayTest {
 
     //Tests if the rockets are in the right initial position
-    @Test
+    /*@Test
     public void RocketInitialPosition(){
         int x = 120;
         int y = 40;
@@ -148,5 +148,7 @@ public class DisplayTest {
         }
         Assertions.assertEquals(true, aux);
     }
+
+     */
 
 }

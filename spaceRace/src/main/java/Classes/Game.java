@@ -12,6 +12,9 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
+import gui.GUI;
+import gui.KeyBoardObserver;
+import gui.LanternaGUI;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,17 +28,24 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class Game {
-    int width;
-    int height;
-    int fps;
+    private final int width;
+    private final int height;
+    private final int fps;
+    private final GUI gui;
+    private final KeyBoardObserver keyBoardObserver;
+
     public Display display;
     public Menu menu;
+
     private static Game singleton = null;
 
-    public Game(int x, int y, int fps) {
+    public Game(int x, int y, int fps) throws IOException, URISyntaxException, FontFormatException {
         width = x;
         height = y;
         this.fps = fps;
+        this.gui = new LanternaGUI(width, height);
+        this.keyBoardObserver = new KeyBoardObserver();
+
         menu = new Menu(x, y);
         display = new Display(x, y);
 
@@ -76,6 +86,9 @@ public class Game {
     public int getHeight(){
             return height;
         }
+
+
+    public KeyBoardObserver getKeyBoardObserver(){ return keyBoardObserver;}
 
     /*private void draw () throws IOException {
 
@@ -128,20 +141,24 @@ public class Game {
             if (key.getKeyType() == KeyType.EOF)
                 break;
         }
+
+
     }
     public void start(TerminalScreen screen) throws IOException {
         int frameTime = 1000 / this.fps;
+
+        gui.addKeyBoardListener(keyBoardObserver);
 
         //menu.open();
 
         while ( true ) {
             long startTime = System.currentTimeMillis();
 
-            //menu.draw(screen.newTextGraphics());
+            menu.draw(screen.newTextGraphics());
             //menu.keyboardRead()    // aqui vai ler a opção, se for a primeira entra no play
 
             MoveObstacles move = new MoveObstacles(display);
-            display.draw(screen.newTextGraphics());
+            //display.draw(screen.newTextGraphics());
 
             KeyListener listener = new KeyL();
             ((AWTTerminalFrame) screen.getTerminal()).getComponent(0).addKeyListener(listener);

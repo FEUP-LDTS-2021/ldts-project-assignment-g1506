@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class GameTest {
 
     //Tests if game is created with the right size
-    @Test
+    /*@Test
     public void sizeGame1() {
         int x=120;
         int y=40;
@@ -46,5 +46,7 @@ public class GameTest {
         Assertions.assertEquals(x, game.display.getWidth());
         Assertions.assertEquals(y, game.display.getHeight());
     }
+
+     */
 
 }
