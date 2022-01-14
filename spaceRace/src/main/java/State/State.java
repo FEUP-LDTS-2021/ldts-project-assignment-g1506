@@ -6,5 +6,9 @@ public interface State {
 
     void open();
     void close();
+    boolean getState();
+    void setStateTrue();
+    void setStateFalse();
+    void keyboardRead();
     void draw(TextGraphics graphics);
 }

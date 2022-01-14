@@ -1,5 +1,4 @@
-package Classes;
+package Drawing;
 
 public class Draw {
-
 }

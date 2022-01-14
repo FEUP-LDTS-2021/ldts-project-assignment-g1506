@@ -5,7 +5,7 @@ import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Menu {
+public class Menu extends MenuState{
     private int width;
     private int height;
 
@@ -13,7 +13,6 @@ public class Menu {
         this.width = width;
         this.height = height;
     }
-
 
     public void draw(TextGraphics graphics){
         graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));

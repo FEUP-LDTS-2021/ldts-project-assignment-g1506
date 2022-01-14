@@ -14,6 +14,8 @@ import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
@@ -46,6 +48,7 @@ public class Game {
         return singleton;
     }
 
+    //mudar
     public void processKey (KeyStroke key) {
         switch (key.getKeyType()) {
             case ArrowUp -> display.moveRocket2(display.moveUp2());
@@ -58,6 +61,14 @@ public class Game {
             display.moveRocket1(display.moveDown1());
         }
     }
+
+    public void processKeyy (KeyEvent e){
+
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+            display.moveRocket2(display.moveUp2());
+        }
+    }
+
     public int getWidth(){
             return width;
         }
@@ -93,7 +104,8 @@ public class Game {
 
         Terminal terminal = factory.createTerminal();
 
-        Screen screen = new TerminalScreen(terminal);
+        TerminalScreen screen = new TerminalScreen(terminal);
+        screen.getTerminal();
         screen.setCursorPosition(null);   // we don't need a cursor
         screen.startScreen();             // screens must be started
         screen.doResizeIfNecessary();     // resize screen if necessary
@@ -101,14 +113,13 @@ public class Game {
         screen.refresh();
 
         while (true) {
-            //draw();
 
-            //menu.draw(screen.newTextGraphics());
-            display.draw(screen.newTextGraphics());
+            //display.draw(screen.newTextGraphics());
             screen.refresh();
             start(screen);
 
-            KeyStroke key = screen.readInput();
+            KeyStroke key = screen.pollInput();
+
             processKey(key);
 
             if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') {
@@ -118,15 +129,24 @@ public class Game {
                 break;
         }
     }
-    public void start(Screen screen) throws IOException {
+    public void start(TerminalScreen screen) throws IOException {
         int frameTime = 1000 / this.fps;
-        boolean aux = true;
 
-        while ( aux == true ) {
+        //menu.open();
+
+        while ( true ) {
             long startTime = System.currentTimeMillis();
+
+            //menu.draw(screen.newTextGraphics());
+            //menu.keyboardRead()    // aqui vai ler a opção, se for a primeira entra no play
 
             MoveObstacles move = new MoveObstacles(display);
             display.draw(screen.newTextGraphics());
+
+            KeyListener listener = new KeyL();
+            ((AWTTerminalFrame) screen.getTerminal()).getComponent(0).addKeyListener(listener);
+
+
             screen.refresh();
 
             long elapsedTime = System.currentTimeMillis() - startTime;
