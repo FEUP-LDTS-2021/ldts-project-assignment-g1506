@@ -2,6 +2,7 @@ package view;
 
 import gui.LanternaGUI;
 import model.Display;
+import model.Position;
 
 import java.io.IOException;
 
@@ -16,11 +17,12 @@ public class RocketView extends StateView{
 
     @Override
     public void draw() throws IOException {
-        gui.clear();
+        Position position=new Position(10,10);
 
-        drawText(display.rocket1.getPosition(), "R", "#FFFF33");
+        drawText(display.rocket1.getPosition() , "R", "#FFFF33");
+        drawText(position, "R", "#FFFF33");
         
-        gui.refresh();
+        //gui.refresh();
 
     }
 }

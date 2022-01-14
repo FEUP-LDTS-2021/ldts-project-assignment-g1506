@@ -15,6 +15,7 @@ import gui.LanternaGUI;
 import view.MenuView;
 import view.ObstacleView;
 import view.RocketView;
+import view.WallView;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -97,15 +98,19 @@ public class Game {
         //menuView.draw();
         ObstacleView obstacleView = new ObstacleView(display, gui);
         obstacleView.draw();
-        //RocketView rocketView = new RocketView(display, gui);
-        //rocketView.draw();
+        RocketView rocketView = new RocketView(display, gui);
+        rocketView.draw();
+        WallView wallView = new WallView(display,gui);
+        wallView.draw();
 
         while ( true ) {
             long startTime = System.currentTimeMillis();
-
+            gui.clear();
             obstacleView.draw();
+            rocketView.draw();
+            wallView.draw();
             MoveObstacles move = new MoveObstacles(display);
-            //rocketView.draw();
+            gui.refresh();
 
             //menu.draw(screen.newTextGraphics());
             //menu.keyboardRead()    // aqui vai ler a opção, se for a primeira entra no play

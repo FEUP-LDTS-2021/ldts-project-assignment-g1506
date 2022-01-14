@@ -18,7 +18,7 @@ public class Display {
     public Rocket rocket1;
     public Rocket rocket2;
     public List<Obstacle> obstacles;
-    private List<Wall> walls;
+    public List<Wall> walls;
 
     public Display(int width, int height){
         this.width = width;

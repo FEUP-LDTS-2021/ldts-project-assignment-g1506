@@ -12,17 +12,17 @@ import java.io.IOException;
 public class ObstacleView extends StateView{
     Display display;
 
-    public ObstacleView(Display display, LanternaGUI gui) {
+    public ObstacleView(Display display, LanternaGUI gui) throws IOException {
         super(gui);
         this.display = display;
     }
 
     @Override
     public void draw() throws IOException {
-        gui.clear();
+        //gui.clear();
         for(Obstacle obstacle: display.obstacles){
             drawText(obstacle.getPosition(), "O", "#FFFAFA");
         }
-        gui.refresh();
+        //gui.refresh();
     }
 }
