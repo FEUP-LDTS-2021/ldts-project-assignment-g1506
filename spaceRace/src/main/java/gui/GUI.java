@@ -1,6 +1,6 @@
 package gui;
 
-import Classes.Position;
+import model.Position;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
 import java.io.IOException;

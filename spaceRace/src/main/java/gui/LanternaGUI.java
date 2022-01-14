@@ -1,8 +1,6 @@
 package gui;
 
-import Classes.KeyBoardListener;
-import Classes.Position;
-import com.googlecode.lanterna.SGR;
+import model.Position;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -12,7 +10,6 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
-import org.w3c.dom.Text;
 
 import java.awt.*;
 import java.io.File;
@@ -125,7 +122,7 @@ public class LanternaGUI implements GUI{
         textGraphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(this.width, this.height), ' ');
     }
 
-    private void drawText(TextGraphics textGraphics, Position position, String text, String color) {
+    public void drawText(TextGraphics textGraphics, Position position, String text, String color) {
         textGraphics.setForegroundColor(TextColor.Factory.fromString(color));
         textGraphics.putString(position.getX(),position.getY(),text);
     }

@@ -1,5 +1,8 @@
 package Classes;
 
+import model.Display;
+import model.Obstacle;
+
 public class MoveObstacles {
     private int width;
 

@@ -40,6 +40,6 @@ public class MenuState implements State {
     }
 
     @Override
-    public void draw(TextGraphics graphics) {
+    public void draw(TextGraphics graphics) throws IOException {
     }
 }

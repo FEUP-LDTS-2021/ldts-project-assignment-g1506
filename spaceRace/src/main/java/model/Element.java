@@ -1,4 +1,4 @@
-package Classes;
+package model;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 
@@ -10,7 +10,6 @@ public abstract class Element {
     }
 
     public Position getPosition() {return position;}
-
     public void setPosition(Position position) {
         this.position = position;
     }

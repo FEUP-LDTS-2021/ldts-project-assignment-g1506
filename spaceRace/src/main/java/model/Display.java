@@ -1,9 +1,13 @@
-package Classes;
+package model;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
+import model.Obstacle;
+import model.Position;
+import model.Rocket;
+import model.Wall;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

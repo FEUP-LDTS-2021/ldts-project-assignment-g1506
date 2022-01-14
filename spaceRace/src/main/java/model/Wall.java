@@ -1,23 +1,14 @@
-package Classes;
+package model;
 
 import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Obstacle extends Element {
-    boolean direction = true; // true obstacle move to right direction
+public class Wall extends Element {
 
-    public Obstacle(int x, int y){
+    public Wall(int x, int y){
         super(x,y);
-    }
-
-    public boolean getDirection() {
-        return direction;
-    }
-
-    public void setDirection(boolean direction) {
-        this.direction = direction;
     }
 
     @Override
@@ -31,10 +22,9 @@ public class Obstacle extends Element {
     }
 
     @Override
-    public void draw(TextGraphics graphics){
+    public void draw(TextGraphics graphics) {
         graphics.setForegroundColor(TextColor.Factory.fromString("#FFFAFA"));
         graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "O");
+        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "|");
     }
-
 }

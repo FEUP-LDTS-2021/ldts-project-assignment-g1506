@@ -1,4 +1,4 @@
-package Classes;
+package model;
 
 public class Position {
     private int x;

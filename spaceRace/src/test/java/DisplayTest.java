@@ -1,12 +1,3 @@
-import Classes.Game;
-import Classes.Obstacle;
-import Classes.Position;
-import Classes.Wall;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
-
 public class DisplayTest {
 
     //Tests if the rockets are in the right initial position
