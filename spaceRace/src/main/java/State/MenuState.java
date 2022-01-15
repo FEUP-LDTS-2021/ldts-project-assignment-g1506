@@ -1,45 +1,34 @@
 package State;
 
 import Classes.Game;
-import com.googlecode.lanterna.graphics.TextGraphics;
+import Classes.Menu;
+import controller.MenuController;
+import gui.GUI;
+import gui.LanternaGUI;
 
 import java.io.IOException;
 
-public class MenuState implements State {
-    boolean active = false;
+public class MenuState extends State {
+    private MenuController menuController;
 
-
-    @Override
-    public void open() {
-        setStateTrue();
+    public MenuState(Game game, GUI gui) {
+        super(game);
+        menuController =  new MenuController(this, gui);
     }
 
     @Override
-    public void close() {
-        setStateFalse();
+    public void start() {
+        game.getKeyBoardObserver().setListener(menuController);
     }
 
     @Override
-    public boolean getState() {
-        return active;
+    public void step(Game game, long time) throws IOException {
+        this.menuController.step();
     }
 
-    @Override
-    public void setStateTrue() {
-        this.active = true;
-    }
+    public MenuController getMenuController(){return menuController;}
 
-    @Override
-    public void setStateFalse() {
-        this.active = false;
-    }
-
-    @Override
-    public void keyboardRead() {
-
-    }
-
-    @Override
-    public void draw(TextGraphics graphics) throws IOException {
+    public void setMenuController(MenuController menuController){
+        this.menuController = menuController;
     }
 }

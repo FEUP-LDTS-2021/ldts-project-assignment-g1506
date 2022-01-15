@@ -10,10 +10,9 @@ public interface GUI {
     enum ACTION{
         UP,
         DOWN,
-        LEFT,
-        RIGHT,
         PAUSE,
-        QUIT
+        QUIT,
+        ENTER
     }
 
     TextGraphics createTextGraphics();
@@ -34,10 +33,14 @@ public interface GUI {
 
     boolean isActive();
 
+    void drawMenu();
+
     void drawObstacle(Position position, String color);
 
     void drawWall(Position position, String color);
 
     void drawRocket(Position position, String color);
+
+    void drawArrow(Position position, String color);
 
 }

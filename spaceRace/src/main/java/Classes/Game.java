@@ -1,13 +1,17 @@
 package Classes;
 
+import State.State;
+import controller.RocketController;
+
+import State.MenuState;
+import gui.GUI;
+import model.Arrow;
 import model.Display;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import gui.KeyBoardObserver;
 import gui.LanternaGUI;
-import model.Obstacle;
-import model.Wall;
-import view.element.*;
+import view.element.ArrowView;
 import view.state.MenuView;
 
 import java.awt.*;
@@ -21,7 +25,7 @@ public class Game {
     private final int fps;
     private final LanternaGUI gui;
     private final KeyBoardObserver keyBoardObserver;
-
+    private State state;
     public Display display;
     public Menu menu;
 
@@ -33,47 +37,33 @@ public class Game {
         this.fps = fps;
         this.gui = new LanternaGUI(width, height);
         this.keyBoardObserver = new KeyBoardObserver();
+        this.state = new MenuState(this, gui);
 
-        menu = new Menu(x, y, gui);
-        display = new Display(x, y);
+        //menu = new Menu(x, y, gui);
+        display = new Display(x, y, gui);
 
     }
 
     public static Game getInstance() throws IOException, URISyntaxException, FontFormatException {
         if (singleton == null) {
-            singleton = new Game(100, 40, 30);
+            singleton = new Game(120, 50, 30);
         }
         return singleton;
     }
 
-    //mudar
-    public void processKey (KeyStroke key) {
-        switch (key.getKeyType()) {
-            case ArrowUp -> display.moveRocket2(display.moveUp2());
-            case ArrowDown -> display.moveRocket2(display.moveDown2());
-        }
-        if (key.getKeyType() == KeyType.Character && key.getCharacter() == 'w') {
-            display.moveRocket1(display.moveUp1());
-        }
-        if (key.getKeyType() == KeyType.Character && key.getCharacter() == 's') {
-            display.moveRocket1(display.moveDown1());
-        }
-    }
-
-    public void processKeyy (KeyEvent e){
-
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            display.moveRocket2(display.moveUp2());
-        }
-    }
-
     public int getWidth(){
             return width;
-        }
+    }
 
     public int getHeight(){
             return height;
-        }
+    }
+
+    public void setGameState(State state) {
+        this.state= state;
+        if (state != null)
+            this.state.start();
+    }
 
 
     public KeyBoardObserver getKeyBoardObserver(){ return keyBoardObserver;}
@@ -81,47 +71,35 @@ public class Game {
     public void start() throws IOException, URISyntaxException, FontFormatException {
         int frameTime = 1000 / this.fps;
 
-        gui.addKeyBoardListener(keyBoardObserver);
+        gui.addKeyBoardListener(getKeyBoardObserver());
 
         // NÃO APAGAR!!!!!!!!
-        MenuView menuView= new MenuView(menu, gui);
-        menuView.draw();
+        //MenuView menuView= new MenuView(gui);
+        //Arrow arrow = new Arrow(2,2);
+        //ArrowView arrowView = new ArrowView();
 
-        ObstacleView obstacleView = new ObstacleView();
-        WallView wallView = new WallView();
-        RocketView rocketView = new RocketView();
+        //menuView.draw();
+        //arrowView.drawElement(arrow, gui);
 
-        while ( true ) {
+        RocketController rocketC1 = new RocketController(display,display.rocket1);
+        RocketController rocketC2 = new RocketController(display,display.rocket2);
+
+        this.state.start();
+
+        while ( state != null ) {
             long startTime = System.currentTimeMillis();
 
-            gui.clear();
+            state.step(this, startTime);
 
-            rocketView.drawElement(display.rocket1, gui);
-            rocketView.drawElement(display.rocket2, gui);
+            //display.draw();
+            //display.rocket1.setPosition(rocketC1.doAction(GUI.ACTION.UP));
+            //display.rocket2.setPosition(rocketC2.doAction(GUI.ACTION.UP));
+            //rocketC.doAction();
 
-            for(Wall wall : display.walls){
-                wallView.drawElement(wall, gui);
-            }
-
-            for(Obstacle obstacle : display.obstacles){
-                obstacleView.drawElement(obstacle, gui);
-            }
-
-            MoveObstacles move = new MoveObstacles(display);
-
-            gui.refresh();
-
-
-            //menu.draw(screen.newTextGraphics());
-            //menu.keyboardRead()    // aqui vai ler a opção, se for a primeira entra no play
-
-            //MoveObstacles move = new MoveObstacles(display);
-            //display.draw(screen.newTextGraphics());
+            //keyBoardObserver.keyPressed(rocketC.doAction());
 
             //KeyListener listener = new KeyL();
             //((AWTTerminalFrame) screen.getTerminal()).getComponent(0).addKeyListener(listener);
-
-            //screen.refresh();
 
             long elapsedTime = System.currentTimeMillis() - startTime;
             long sleepTime = frameTime - elapsedTime;

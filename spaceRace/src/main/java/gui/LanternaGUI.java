@@ -33,8 +33,8 @@ public class LanternaGUI implements GUI{
 
     public LanternaGUI(TerminalScreen screen){
         this.screen = screen;
-        this.width = 100;
-        this.height = 40;
+        this.width = 120;
+        this.height = 60;
     }
 
     public TerminalScreen createScreen(Terminal terminal) throws IOException{
@@ -61,14 +61,14 @@ public class LanternaGUI implements GUI{
     }
 
     public AWTTerminalFontConfiguration loadFont() throws FontFormatException, IOException, URISyntaxException {
-        URL resource = getClass().getClassLoader().getResource("fonttt.ttf");
+        URL resource = getClass().getClassLoader().getResource("Space2.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 17);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 15);
         return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
@@ -77,9 +77,22 @@ public class LanternaGUI implements GUI{
         return ((AWTTerminalFrame) screen.getTerminal()).isDisplayable();
     }
 
+    public void drawMenu(){
+
+        String name =  "SPACE RACE";
+
+        int x = (width/2) - (name.length()/2), y = height/3;
+
+        drawText(screen.newTextGraphics(), new Position(x,y),"SPACE RACE", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x-6,y+3),"Play", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x-6,y+5),"Instructions", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x-6,y+7),"Exit", "#FFFAFA");
+
+    }
+
     @Override
     public void drawObstacle(Position position, String color) {
-        drawText( screen.newTextGraphics(), position, "O" ,color);
+        drawText( screen.newTextGraphics(), position, "o" ,color);
     }
 
     @Override
@@ -89,7 +102,20 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawRocket(Position position, String color) {
-        drawText( screen.newTextGraphics(), position, "R", color);
+        Position p1 = new Position(position.getX(), position.getY()+1);
+        Position p2 = new Position(position.getX(), position.getY()+2);
+        Position p3 = new Position(position.getX()-1, position.getY()+2);
+        Position p4 = new Position(position.getX()+1, position.getY()+2);
+        drawText( screen.newTextGraphics(), position, "w", color);
+        drawText( screen.newTextGraphics(), p1, "$", color);
+        drawText( screen.newTextGraphics(), p2, "'", color);
+        drawText( screen.newTextGraphics(), p3, "%", color);
+        drawText( screen.newTextGraphics(), p4, "&", color);
+    }
+
+    @Override
+    public void drawArrow(Position position, String color){
+        drawText(screen.newTextGraphics(), position, "*", color);
     }
 
     @Override

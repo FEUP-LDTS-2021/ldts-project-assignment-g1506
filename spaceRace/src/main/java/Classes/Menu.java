@@ -6,19 +6,28 @@ import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import gui.GUI;
 import gui.LanternaGUI;
+import view.state.MenuView;
 
 import java.io.IOException;
 
 public class Menu extends MenuState{
     private int width;
     private int height;
-    private LanternaGUI gui;
+    private GUI gui;
 
-    public Menu(int width, int height, LanternaGUI gui){
+    public Menu(Game game, LanternaGUI gui, int width) {
+        super(game, gui);
+        this.width = width;
+    }
+
+    /*public Menu(int width, int height, GUI gui){
+        super();
         this.width = width;
         this.height = height;
         this.gui = gui;
     }
+
+     */
 
     public int getWidth() {
         return width;
@@ -29,23 +38,7 @@ public class Menu extends MenuState{
     }
 
     public void draw(TextGraphics graphics) throws IOException {
-        //drawBackground(graphics, "#FFFAFA");
-        gui.refresh();
 
-        //gui.drawText(graphics, );
-
-        graphics.setBackgroundColor(TextColor.Factory.fromString("#000000"));
-        graphics.fillRectangle(new TerminalPosition(0,0), graphics.getSize(),' ');
-
-        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFAFA"));
-
-        String name =  "SPACE RACE";
-        int x = (width/2) - (name.length()/2), y = height/3;
-
-        graphics.putString(x , y, name);
-        graphics.putString(width/3, y+3, "Play");
-        graphics.putString(width/3, y+5, "Instructions");
-        graphics.putString(width/3, y+7, "Exit");
     }
 
 }

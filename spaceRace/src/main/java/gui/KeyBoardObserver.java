@@ -1,6 +1,6 @@
 package gui;
 
-import Classes.KeyBoardListener;
+import State.KeyBoardListener;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -16,11 +16,11 @@ public class KeyBoardObserver extends KeyAdapter {
             case KeyEvent.VK_ESCAPE:
                 listener.keyPressed(GUI.ACTION.QUIT);
                 break;
-            case KeyEvent.VK_A:
-                listener.keyPressed(GUI.ACTION.LEFT);
+            case KeyEvent.VK_UP:
+                listener.keyPressed(GUI.ACTION.UP);
                 break;
-            case KeyEvent.VK_D:
-                listener.keyPressed(GUI.ACTION.RIGHT);
+            case KeyEvent.VK_DOWN:
+                listener.keyPressed(GUI.ACTION.DOWN);
                 break;
             case KeyEvent.VK_W:
                 listener.keyPressed(GUI.ACTION.UP);
@@ -31,6 +31,8 @@ public class KeyBoardObserver extends KeyAdapter {
             case KeyEvent.VK_P:
                 listener.keyPressed(GUI.ACTION.PAUSE);
                 break;
+            case KeyEvent.VK_ENTER:
+                listener.keyPressed(GUI.ACTION.ENTER);
         }
     }
     public void setListener(KeyBoardListener listener){ this.listener = listener;}
