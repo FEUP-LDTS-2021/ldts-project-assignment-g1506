@@ -1,15 +1,12 @@
-package view;
+package view.state;
 
 import Classes.Menu;
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.TextColor;
-import gui.GUI;
 import gui.LanternaGUI;
 import model.Position;
 
 import java.io.IOException;
 
-public class MenuView extends StateView{
+public class MenuView extends StateView {
     int width;
     int height;
 

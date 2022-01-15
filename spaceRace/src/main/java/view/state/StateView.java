@@ -1,4 +1,4 @@
-package view;
+package view.state;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import gui.GUI;

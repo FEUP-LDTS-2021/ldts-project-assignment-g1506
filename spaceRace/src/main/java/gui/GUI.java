@@ -38,7 +38,6 @@ public interface GUI {
 
     void drawWall(Position position, String color);
 
-    void drawRocket1(Position position, String color);
+    void drawRocket(Position position, String color);
 
-    void drawRocket2(Position position, String color);
 }

@@ -1,29 +1,18 @@
 package Classes;
 
 import model.Display;
-import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
-import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
-import gui.GUI;
 import gui.KeyBoardObserver;
 import gui.LanternaGUI;
-import view.MenuView;
-import view.ObstacleView;
-import view.RocketView;
-import view.WallView;
+import model.Obstacle;
+import model.Wall;
+import view.element.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 public class Game {
     private final int width;
@@ -96,21 +85,32 @@ public class Game {
         // NÃO APAGAR!!!!!!!!
         //MenuView menuView= new MenuView(menu, gui);
         //menuView.draw();
-        ObstacleView obstacleView = new ObstacleView(display, gui);
-        obstacleView.draw();
-        RocketView rocketView = new RocketView(display, gui);
-        rocketView.draw();
-        WallView wallView = new WallView(display,gui);
-        wallView.draw();
+
+        ObstacleView obstacleView = new ObstacleView();
+        WallView wallView = new WallView();
+        RocketView rocketView = new RocketView();
 
         while ( true ) {
             long startTime = System.currentTimeMillis();
+
             gui.clear();
-            obstacleView.draw();
-            rocketView.draw();
-            wallView.draw();
+
+            rocketView.drawElement(display.rocket1, gui);
+            rocketView.drawElement(display.rocket2, gui);
+
+            for(Wall wall : display.walls){
+                wallView.drawElement(wall, gui);
+            }
+
+            for(Obstacle obstacle : display.obstacles){
+                obstacleView.drawElement(obstacle, gui);
+            }
+
             MoveObstacles move = new MoveObstacles(display);
+
             gui.refresh();
+
+            //gui.refresh();
 
             //menu.draw(screen.newTextGraphics());
             //menu.keyboardRead()    // aqui vai ler a opção, se for a primeira entra no play

@@ -88,12 +88,7 @@ public class LanternaGUI implements GUI{
     }
 
     @Override
-    public void drawRocket1(Position position, String color) {
-        drawText( screen.newTextGraphics(), position, "R", color);
-    }
-
-    @Override
-    public void drawRocket2(Position position, String color) {
+    public void drawRocket(Position position, String color) {
         drawText( screen.newTextGraphics(), position, "R", color);
     }
 
