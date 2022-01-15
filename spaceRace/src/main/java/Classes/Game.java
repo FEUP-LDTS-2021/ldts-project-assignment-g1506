@@ -8,6 +8,7 @@ import gui.LanternaGUI;
 import model.Obstacle;
 import model.Wall;
 import view.element.*;
+import view.state.MenuView;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -83,8 +84,8 @@ public class Game {
         gui.addKeyBoardListener(keyBoardObserver);
 
         // NÃO APAGAR!!!!!!!!
-        //MenuView menuView= new MenuView(menu, gui);
-        //menuView.draw();
+        MenuView menuView= new MenuView(menu, gui);
+        menuView.draw();
 
         ObstacleView obstacleView = new ObstacleView();
         WallView wallView = new WallView();
@@ -110,7 +111,6 @@ public class Game {
 
             gui.refresh();
 
-            //gui.refresh();
 
             //menu.draw(screen.newTextGraphics());
             //menu.keyboardRead()    // aqui vai ler a opção, se for a primeira entra no play
