@@ -84,16 +84,16 @@ public class Game {
         RocketController rocketC1 = new RocketController(display,display.rocket1);
         RocketController rocketC2 = new RocketController(display,display.rocket2);
 
-        this.state.start();
+        //this.state.start();
 
         while ( state != null ) {
             long startTime = System.currentTimeMillis();
 
-            state.step(this, startTime);
+            //state.step(this, startTime);
 
-            //display.draw();
-            //display.rocket1.setPosition(rocketC1.doAction(GUI.ACTION.UP));
-            //display.rocket2.setPosition(rocketC2.doAction(GUI.ACTION.UP));
+            display.draw();
+            display.rocket1.setPosition(rocketC1.doAction(GUI.ACTION.UP));
+            display.rocket2.setPosition(rocketC2.doAction(GUI.ACTION.UP));
             //rocketC.doAction();
 
             //keyBoardObserver.keyPressed(rocketC.doAction());

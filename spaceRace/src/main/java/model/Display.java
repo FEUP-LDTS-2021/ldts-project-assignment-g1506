@@ -34,8 +34,8 @@ public class Display {
     public Display(int width, int height, LanternaGUI gui){
         this.width = width;
         this.height = height;
-        rocket1 = new Rocket(width/3,height-3);
-        rocket2 = new Rocket((width/3)*2,height-3);
+        rocket1 = new Rocket(width/3,height-2);
+        rocket2 = new Rocket((width/3)*2,height-2);
         obstacles = createObstacles();
         walls = createWalls();
         this.gui = gui;
@@ -86,7 +86,7 @@ public class Display {
     public List<Wall> createWalls(){
         List<Wall> walls = new ArrayList<>();
 
-        for(int i = height-1;  i > 0 ; i--){
+        for(int i = height;  i > 0 ; i--){
             Wall wall = new Wall(width/2,i);
             walls.add(wall);
         }
@@ -136,15 +136,15 @@ public class Display {
         rocketView.drawElement(rocket1, gui);
         rocketView.drawElement(rocket2, gui);
 
-        for(Wall wall : walls){
-            wallView.drawElement(wall, gui);
-        }
-
         for(Obstacle obstacle : obstacles){
             obstacleView.drawElement(obstacle, gui);
         }
 
         MoveObstacles();
+
+        for(Wall wall : walls){
+            wallView.drawElement(wall, gui);
+        }
 
         gui.refresh();
     }
