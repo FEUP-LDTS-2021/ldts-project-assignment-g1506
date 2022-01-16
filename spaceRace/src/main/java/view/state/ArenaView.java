@@ -1,4 +1,4 @@
-package view.element;
+package view.state;
 
 import Classes.MoveObstacles;
 import gui.GUI;
@@ -6,6 +6,10 @@ import model.Arena;
 import model.Element;
 import model.Obstacle;
 import model.Wall;
+import view.element.ElementView;
+import view.element.ObstacleView;
+import view.element.RocketView;
+import view.element.WallView;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,7 +35,7 @@ public class ArenaView {
         drawBackground();
 
         rocketView.drawElement(arena.getRocket1(), gui);
-        rocketView.drawElement(arena.getRocket1(), gui);
+        rocketView.drawElement(arena.getRocket2(), gui);
 
         for(Obstacle obstacle : arena.getObstacles()){
             obstacleView.drawElement(obstacle, gui);

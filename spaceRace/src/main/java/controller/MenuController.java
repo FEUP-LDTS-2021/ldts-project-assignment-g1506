@@ -1,5 +1,6 @@
 package controller;
 
+import Classes.Game;
 import State.KeyBoardListener;
 import State.State;
 import gui.GUI;
@@ -17,6 +18,7 @@ public class MenuController implements KeyBoardListener {
     private final StateView menuView;
     private final ArrowView arrowView;
     private final GUI gui;
+    private final Game game;
     private static int num = 1;
     Arrow arrow;
 
@@ -26,6 +28,7 @@ public class MenuController implements KeyBoardListener {
         this.arrowView = new ArrowView();
         this.gui = gui;
         this.arrow = new Arrow(gui.getWidth()/2 - 8, (gui.getHeight() * 2) / 3);
+        this.game = state1.getGame();
     }
 
     public void step() throws IOException{
@@ -61,7 +64,7 @@ public class MenuController implements KeyBoardListener {
 
         if(action == GUI.ACTION.ENTER){
             if(num==1){
-                state1.changeState(state1);  //primeira opção
+                state1.changeState(new PlayState(game, gui));  //primeira opção
             }
             else if(num==2){
                 state1.changeState(state1);  //segunda opção

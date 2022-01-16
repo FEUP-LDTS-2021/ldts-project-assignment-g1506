@@ -15,6 +15,7 @@ public class PlayController extends GameController implements KeyBoardListener {
     private final GUI gui;
     //private final StateView playView;
     private long endTime;
+    private final Arena arena;
 
     public PlayController(State state, GUI gui, Arena arena) {
         super(arena);
@@ -22,6 +23,7 @@ public class PlayController extends GameController implements KeyBoardListener {
         this.gui = gui;
         this.arenaController = new ArenaController(state, gui, arena);
         //this.playView = new PlayView(gui);
+        this.arena = arena;
         this.endTime = 0;
     }
 
@@ -45,11 +47,13 @@ public class PlayController extends GameController implements KeyBoardListener {
     @Override
     public void keyPressed(GUI.ACTION action) {
         if(action == GUI.ACTION.QUIT){
-            changeState(new MenuState(state.getGame(), this.gui));
+            changeState(new MenuState(this.state.getGame(), this.gui));
             return;
         }
         if(action == GUI.ACTION.UP){
 
         }
     }
+
+
 }
