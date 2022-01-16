@@ -19,14 +19,15 @@ public class RocketController {
 
     public Position moveUp(){return new Position(rocket.getPosition().getX(), rocket.getPosition().getY()-1);}
     public Position moveDown(){return new Position(rocket.getPosition().getX(), rocket.getPosition().getY()+1);}
-    public Position InitialPosition(){
+
+    public Position initialPosition(){
         rocket.getPosition().setY(display.getHeight()-1);
         return new Position(rocket.getPosition().getX(),rocket.getPosition().getY());
     }
     public Position doAction(GUI.ACTION action) {
 
         if (rocket.getPosition().getY()==0) {
-            return InitialPosition();
+            return initialPosition();
         }
 
         if (action == GUI.ACTION.UP && rocket.getPosition().getY()>0){
@@ -39,8 +40,6 @@ public class RocketController {
         //display.rocket2.setPosition(rocket.getPosition());
         return null;
     }
-
-
 
     //public Position moveUp(){return}
 }

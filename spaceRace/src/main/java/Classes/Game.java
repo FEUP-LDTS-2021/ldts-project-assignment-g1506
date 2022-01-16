@@ -7,15 +7,11 @@ import State.MenuState;
 import gui.GUI;
 import model.Arrow;
 import model.Display;
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
 import gui.KeyBoardObserver;
 import gui.LanternaGUI;
 import view.element.ArrowView;
-import view.state.MenuView;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
 

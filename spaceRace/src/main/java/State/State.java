@@ -17,4 +17,8 @@ public abstract class State {
 
     public void changeState(State state1) {this.game.setGameState(state1);}
 
+    public Game getGame(){
+        return game;
+    }
+
 }
