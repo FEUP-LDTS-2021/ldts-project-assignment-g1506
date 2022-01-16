@@ -33,6 +33,10 @@ public class KeyBoardObserver extends KeyAdapter {
                 break;
             case KeyEvent.VK_ENTER:
                 listener.keyPressed(GUI.ACTION.ENTER);
+                break;
+            case KeyEvent.VK_SPACE:
+                listener.keyPressed(GUI.ACTION.ENTER);
+                break;
         }
     }
     public void setListener(KeyBoardListener listener){ this.listener = listener;}

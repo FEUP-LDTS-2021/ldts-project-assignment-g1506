@@ -27,7 +27,6 @@ public class Game {
     private final KeyBoardObserver keyBoardObserver;
     private State state;
     public Display display;
-    public Menu menu;
 
     private static Game singleton = null;
 
@@ -39,7 +38,6 @@ public class Game {
         this.keyBoardObserver = new KeyBoardObserver();
         this.state = new MenuState(this, gui);
 
-        //menu = new Menu(x, y, gui);
         display = new Display(x, y, gui);
 
     }
@@ -64,7 +62,6 @@ public class Game {
         if (state != null)
             this.state.start();
     }
-
 
     public KeyBoardObserver getKeyBoardObserver(){ return keyBoardObserver;}
 
@@ -110,7 +107,6 @@ public class Game {
 
             }
         }
+        gui.close();
     }
-
-
 }

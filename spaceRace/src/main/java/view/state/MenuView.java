@@ -1,8 +1,6 @@
 package view.state;
 
-import Classes.Menu;
 import gui.GUI;
-import gui.LanternaGUI;
 
 import java.io.IOException;
 

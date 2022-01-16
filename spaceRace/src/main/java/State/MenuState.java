@@ -1,10 +1,8 @@
 package State;
 
 import Classes.Game;
-import Classes.Menu;
 import controller.MenuController;
 import gui.GUI;
-import gui.LanternaGUI;
 
 import java.io.IOException;
 

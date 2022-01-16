@@ -24,7 +24,7 @@ public class MenuController implements KeyBoardListener {
         this.menuView = new MenuView(gui);
         this.arrowView = new ArrowView();
         this.gui = gui;
-        this.arrow = new Arrow(gui.getWidth()/2 - 10, (gui.getHeight() * 2) / 3);
+        this.arrow = new Arrow(gui.getWidth()/2 - 8, (gui.getHeight() * 2) / 3);
     }
 
     public void step() throws IOException{
