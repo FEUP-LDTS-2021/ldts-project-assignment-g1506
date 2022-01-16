@@ -44,7 +44,7 @@ public class MenuController implements KeyBoardListener {
             state1.changeState(null);
         }
 
-        if(action == GUI.ACTION.UP){
+        if(action == GUI.ACTION.UP1 || action == GUI.ACTION.UP2){
             if(num-1 < 1)
                 num = 1;
             else {
@@ -53,7 +53,7 @@ public class MenuController implements KeyBoardListener {
             }
         }
 
-        if(action == GUI.ACTION.DOWN){
+        if(action == GUI.ACTION.DOWN1 || action == GUI.ACTION.DOWN2){
             if(num+1 > 3)
                 num = 3;
             else {

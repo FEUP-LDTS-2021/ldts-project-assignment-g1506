@@ -8,8 +8,10 @@ import java.io.IOException;
 public interface GUI {
 
     enum ACTION{
-        UP,
-        DOWN,
+        UP1,
+        UP2,
+        DOWN1,
+        DOWN2,
         PAUSE,
         QUIT,
         ENTER

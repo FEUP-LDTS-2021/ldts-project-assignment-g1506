@@ -6,6 +6,8 @@ import gui.GUI;
 import model.Arena;
 import State.MenuState;
 import State.KeyBoardListener;
+import model.Position;
+import model.Rocket;
 
 import java.io.IOException;
 
@@ -16,6 +18,8 @@ public class PlayController extends GameController implements KeyBoardListener {
     //private final StateView playView;
     private long endTime;
     private final Arena arena;
+    private final Position initialPos1;
+    private final Position initialPos2;
 
     public PlayController(State state, GUI gui, Arena arena) {
         super(arena);
@@ -25,6 +29,8 @@ public class PlayController extends GameController implements KeyBoardListener {
         //this.playView = new PlayView(gui);
         this.arena = arena;
         this.endTime = 0;
+        this.initialPos1 = new Position(state.getGame().getWidth()/3,state.getGame().getHeight()-2);
+        this.initialPos2 = new Position((state.getGame().getWidth()/3)*2,state.getGame().getHeight()-2);
     }
 
     @Override
@@ -50,10 +56,41 @@ public class PlayController extends GameController implements KeyBoardListener {
             changeState(new MenuState(this.state.getGame(), this.gui));
             return;
         }
-        if(action == GUI.ACTION.UP){
 
+        if(action == GUI.ACTION.UP1){
+            if(arena.getRocket1().getPosition().getY() == 0){
+                arena.getRocket1().setPosition(initialPos1);
+                return;
+            }
+            if(arena.getRocket1().getPosition().getY()>0) {
+                arena.getRocket1().setPosition(moveUp1());
+                return;
+            }
+        }
+        if (action == GUI.ACTION.DOWN1 && arena.getRocket1().getPosition().getY()<state.getGame().getHeight()-2) {
+            arena.getRocket1().setPosition(moveDown1());
+            return;
+        }
+
+        if(action == GUI.ACTION.UP2){
+            if(arena.getRocket2().getPosition().getY() == 0){
+                arena.getRocket2().setPosition(initialPos2);
+                return;
+            }
+            if(arena.getRocket2().getPosition().getY()>0){
+                arena.getRocket2().setPosition(moveUp2());
+                return;
+            }
+        }
+        if (action == GUI.ACTION.DOWN2 && arena.getRocket2().getPosition().getY()<state.getGame().getHeight()-2) {
+            arena.getRocket2().setPosition(moveDown2());
+            return;
         }
     }
 
+    public Position moveUp1(){return new Position(arena.getRocket1().getPosition().getX(), arena.getRocket1().getPosition().getY()-1);}
+    public Position moveUp2(){return new Position(arena.getRocket2().getPosition().getX(), arena.getRocket2().getPosition().getY()-1);}
+    public Position moveDown1(){return new Position(arena.getRocket1().getPosition().getX(), arena.getRocket1().getPosition().getY()+1);}
+    public Position moveDown2(){return new Position(arena.getRocket2().getPosition().getX(), arena.getRocket2().getPosition().getY()+1);}
 
 }

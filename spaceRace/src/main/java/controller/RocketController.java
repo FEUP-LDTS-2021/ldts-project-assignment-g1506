@@ -27,14 +27,15 @@ public class RocketController {
     public Position doAction(GUI.ACTION action) {
 
         if (rocket.getPosition().getY()==0) {
+            //marcar um ponto
             return initialPosition();
         }
 
-        if (action == GUI.ACTION.UP && rocket.getPosition().getY()>0){
+        if (action == GUI.ACTION.UP2 && rocket.getPosition().getY()>0){
             return moveUp();
         }
 
-        if (action == GUI.ACTION.DOWN)
+        if (action == GUI.ACTION.DOWN2)
             return moveDown();
 
         //display.rocket2.setPosition(rocket.getPosition());
