@@ -17,13 +17,14 @@ public class MenuController implements KeyBoardListener {
     private final ArrowView arrowView;
     private final GUI gui;
     private static int num = 1;
-    Arrow arrow = new Arrow(46, 19);
+    Arrow arrow;
 
     public MenuController(State state1, GUI gui){
         this.state1 = state1;
         this.menuView = new MenuView(gui);
         this.arrowView = new ArrowView();
         this.gui = gui;
+        this.arrow = new Arrow(gui.getWidth()/2 - 10, (gui.getHeight() * 2) / 3);
     }
 
     public void step() throws IOException{

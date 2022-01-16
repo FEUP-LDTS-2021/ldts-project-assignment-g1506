@@ -78,18 +78,20 @@ public class LanternaGUI implements GUI{
     }
 
     public void drawMenu(){
-        String color = "#FFFAFA";
+        String color = "#E6E6FA";
+        String color2 = "#E6E6FA";
+        String play = "PLAY";
+        String inst = "INSTRUCTIONS";
+        String exit = "EXIT";
 
-        drawTitle(color);
+        drawTitle(color, color2);
 
-        String name =  "SPACE RACE";
+        int x = width/2;
+        int y = (height/3)*2;
 
-        int x = (width/2) - (name.length()/2), y = height/3;
-
-        drawText(screen.newTextGraphics(), new Position(x,y),"SPACE RACE", "#FFFAFA");
-        drawText(screen.newTextGraphics(), new Position(x-6,y+3),"Play", "#FFFAFA");
-        drawText(screen.newTextGraphics(), new Position(x-6,y+5),"Instructions", "#FFFAFA");
-        drawText(screen.newTextGraphics(), new Position(x-6,y+7),"Exit", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x - play.length()/2,y+1),play, "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x - inst.length()/2,y+3),inst, "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x - exit.length()/2,y+5),exit, "#FFFAFA");
 
 
     }
@@ -167,316 +169,35 @@ public class LanternaGUI implements GUI{
         screen.close();
     }
 
-    public void drawTitle(String color){
-        drawText(screen.newTextGraphics(), new Position(34, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(36, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(39, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(40, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(33, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(33, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(33, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(36, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(33, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(36, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(39, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(39, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(40, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(39, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(39, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(39, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(32, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(33, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(36, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(38, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(32, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(33, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(34, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(35, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(36, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(37, 14),"$", color);
+    public void drawTitle(String color, String color2){
 
-        drawText(screen.newTextGraphics(), new Position(46, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(47, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(48, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(49, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(50, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(52, 3),"$", color);
+        int x = 35;
 
-        drawText(screen.newTextGraphics(), new Position(45, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(47, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(52, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(53, 4),"$", color);
+        drawText(screen.newTextGraphics(), new Position(34, 3),"$$$$$$$      $$$$$$$        $$$$     $$$$$$$     $$$$$$$$", color);
+        drawText(screen.newTextGraphics(), new Position(34, 4),"$$          $$$   $$$      $$ $$     $$          $$", color);
+        drawText(screen.newTextGraphics(), new Position(33, 5),"$$$          $$$   $$       $$ $$     $$         $$$", color);
+        drawText(screen.newTextGraphics(), new Position(33, 6),"$$$          $$$   $$       $$ $$    $$$         $$$", color);
+        drawText(screen.newTextGraphics(), new Position(33, 7),"$$$$$$       $$    $$      $$  $$    $$$         $$$", color);
+        drawText(screen.newTextGraphics(), new Position(33, 8),"$$$$$$$      $$$$$$$       $$  $$    $$          $$$$$$", color);
+        drawText(screen.newTextGraphics(), new Position(37, 9),"$$$$    $$$$$$$$      $$$  $$    $$          $$", color);
+        drawText(screen.newTextGraphics(), new Position(38, 10),"$$     $$$           $$$ $$$    $$         $$$", color);
+        drawText(screen.newTextGraphics(), new Position(38, 11),"$$     $$            $$$$$$$   $$$         $$$", color);
+        drawText(screen.newTextGraphics(), new Position(37, 12),"$$$     $$           $$$  $$$   $$$         $$", color);
+        drawText(screen.newTextGraphics(), new Position(32, 13),"$$$$$$$      $$           $$   $$$   $$$$$$$     $$$$$$$", color);
+        drawText(screen.newTextGraphics(), new Position(32, 14),"$$$$$$      $$$          $$$   $$$    $$$$$$     $$$$$$$", color);
 
-        drawText(screen.newTextGraphics(), new Position(45, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(47, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(52, 5),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(45, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(47, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(52, 6),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(45, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(52, 7),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(45, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(47, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(48, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(49, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(50, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 8),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(44, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(45, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(47, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(48, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(49, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(50, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(51, 9),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(44, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(45, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(46, 10),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(44, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(45, 11),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(44, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(45, 12),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(44, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(45, 13),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(43, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(44, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(45, 14),"$", color);
-
-
-
-        drawText(screen.newTextGraphics(), new Position(59, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(60, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 3),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(58, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(59, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 4),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(58, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(59, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 5),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(58, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(59, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 6),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(57, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(58, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 7),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(57, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(58, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 8),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(56, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(57, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(58, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 9),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(56, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(57, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(58, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(60, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 10),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(56, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(57, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(58, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(59, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(60, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 11),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(55, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(56, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(57, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(60, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 12),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(55, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(56, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(60, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 13),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(54, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(55, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(56, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(60, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(61, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(62, 14),"$", color);
-
-
-
-        drawText(screen.newTextGraphics(), new Position(68, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(70, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(71, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(72, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(73, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(74, 3),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(68, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 4),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(68, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 5),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(67, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 6),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(67, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 7),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(67, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 8),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(67, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 9),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(67, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 10),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(66, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(67, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 11),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(66, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(67, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 12),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(66, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(67, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(70, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(71, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(72, 13),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(67, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(68, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(69, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(70, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(71, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(72, 14),"$", color);
-
-
-        drawText(screen.newTextGraphics(), new Position(80, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(82, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(83, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(84, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(85, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(86, 3),"$", color);
-        drawText(screen.newTextGraphics(), new Position(87, 3),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(80, 4),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 4),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(79, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 5),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 5),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(79, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 6),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 6),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(79, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 7),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 7),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(79, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(82, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(83, 8),"$", color);
-        drawText(screen.newTextGraphics(), new Position(84, 8),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(79, 9),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 9),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(78, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(79, 10),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 10),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(78, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(79, 11),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 11),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(78, 12),"$", color);
-        drawText(screen.newTextGraphics(), new Position(79, 12),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(78, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(79, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(82, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(83, 13),"$", color);
-        drawText(screen.newTextGraphics(), new Position(84, 13),"$", color);
-
-        drawText(screen.newTextGraphics(), new Position(78, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(79, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(80, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(81, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(82, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(83, 14),"$", color);
-        drawText(screen.newTextGraphics(), new Position(84, 14),"$", color);
+        drawText(screen.newTextGraphics(), new Position(x, 17),"   $$$$$$$$        $$$$      $$$$$$$      $$$$$$$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 18),"  $$$   $$$       $$ $$      $$           $$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 19),"  $$$   $$        $$ $$      $$          $$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 20),"  $$$   $$        $$ $$     $$$          $$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 21),"  $$$  $$$       $$  $$     $$$          $$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 22),"  $$$$$$$        $$  $$     $$           $$$$$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 23)," $$$  $$$       $$$  $$     $$           $$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 24)," $$$   $$       $$$ $$$     $$          $$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 25)," $$    $$       $$$$$$$    $$$          $$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 26)," $$    $$      $$$  $$$    $$$          $$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 27)," $$   $$$      $$   $$$    $$$$$$$      $$$$$$$", color2);
+        drawText(screen.newTextGraphics(), new Position(x, 28),"$$$   $$$     $$$   $$$     $$$$$$      $$$$$$$", color2);
 
     }
 
