@@ -35,6 +35,7 @@ public class PlayController extends GameController implements KeyBoardListener {
 
     @Override
     public void step(Game game, long time) throws IOException {
+
         if(this.endTime == 0){
             arenaController.step(game, time);
         }

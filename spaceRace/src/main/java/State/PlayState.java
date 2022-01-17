@@ -11,6 +11,8 @@ import java.io.IOException;
 public class PlayState extends State{
     private PlayController playController;
     private Arena arena;
+    private boolean aux = true;
+
 
     public PlayState(Game game, GUI gui) {
         super(game);
@@ -25,6 +27,7 @@ public class PlayState extends State{
 
     @Override
     public void step(Game game, long time) throws IOException {
+        if(firstTime()) game.setInitialTime(System.currentTimeMillis());
         playController.step(game, time);
     }
 
@@ -42,5 +45,13 @@ public class PlayState extends State{
 
     public void setArena(Arena arena){
         this.arena = arena;
+    }
+
+    public boolean firstTime(){
+        if (aux == true){
+            aux=false;
+            return true;
+        }
+        else return false;
     }
 }

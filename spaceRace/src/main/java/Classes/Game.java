@@ -23,6 +23,7 @@ public class Game {
     private final KeyBoardObserver keyBoardObserver;
     private State state;
     public Display display;
+    public long initialTime;
 
     private static Game singleton = null;
 
@@ -40,7 +41,7 @@ public class Game {
 
     public static Game getInstance() throws IOException, URISyntaxException, FontFormatException {
         if (singleton == null) {
-            singleton = new Game(120, 50, 30);
+            singleton = new Game(120, 50, 25);
         }
         return singleton;
     }
@@ -61,6 +62,10 @@ public class Game {
 
     public KeyBoardObserver getKeyBoardObserver(){ return keyBoardObserver;}
 
+    public void setInitialTime(long initialTime) {
+        this.initialTime = initialTime;
+    }
+
     public void start() throws IOException, URISyntaxException, FontFormatException {
         int frameTime = 1000 / this.fps;
 
@@ -74,12 +79,19 @@ public class Game {
         //menuView.draw();
         //arrowView.drawElement(arrow, gui);
 
-        RocketController rocketC1 = new RocketController(display,display.rocket1);
-        RocketController rocketC2 = new RocketController(display,display.rocket2);
+        //RocketController rocketC1 = new RocketController(display,display.rocket1);
+        //RocketController rocketC2 = new RocketController(display,display.rocket2);
 
         this.state.start();
-
+        boolean first = true;
         while ( state != null ) {
+
+            /*if( first == true) {
+                System.out.println("passou");
+                initialTime = System.currentTimeMillis();
+                first = false;
+            }*/
+
             long startTime = System.currentTimeMillis();
 
             state.step(this, startTime);
