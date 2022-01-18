@@ -1,6 +1,5 @@
 package view.state;
 
-import Classes.MoveObstacles;
 import gui.GUI;
 import model.Arena;
 import model.Element;
