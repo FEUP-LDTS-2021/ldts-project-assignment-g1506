@@ -10,12 +10,18 @@ public class ArenaLoader extends ArenaBuilder{
 
     @Override
     protected Rocket createRocket1(int width, int height) {
-        return new Rocket(width/3,height-2);
+        Rocket rocket1 = new Rocket(width/3,height-2);
+        rocket1.setScore(0);
+        rocket1.setColor("#FF6A6A");
+        return rocket1;
     }
 
     @Override
     protected Rocket createRocket2(int width, int height) {
-        return new Rocket((width/3)*2,height-2);
+        Rocket rocket2 = new Rocket((width/3)*2,height-2);
+        rocket2.setScore(10);
+        rocket2.setColor("#EEDD82");
+        return rocket2;
     }
 
     @Override

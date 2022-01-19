@@ -26,7 +26,6 @@ public class LanternaGUI implements GUI{
         AWTTerminalFontConfiguration fontConfig = loadFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
         this.screen = createScreen(terminal);
-
         this.width = width;
         this.height = height;
     }
@@ -78,8 +77,8 @@ public class LanternaGUI implements GUI{
     }
 
     public void drawMenu(){
-        String color = "#E6E6FA";
-        String color2 = "#E6E6FA";
+        String color = "#FF6A6A";
+        String color2 = "#EEDD82";
         String play = "PLAY";
         String inst = "INSTRUCTIONS";
         String exit = "EXIT";
@@ -92,8 +91,6 @@ public class LanternaGUI implements GUI{
         drawText(screen.newTextGraphics(), new Position(x - play.length()/2,y+1),play, "#FFFAFA");
         drawText(screen.newTextGraphics(), new Position(x - inst.length()/2,y+3),inst, "#FFFAFA");
         drawText(screen.newTextGraphics(), new Position(x - exit.length()/2,y+5),exit, "#FFFAFA");
-
-
     }
 
     @Override
@@ -107,7 +104,7 @@ public class LanternaGUI implements GUI{
     }
 
     @Override
-    public void drawRocket(Position position, String color) {
+    public void drawRocket(Position position, String color, int score) {
         Position p1 = new Position(position.getX(), position.getY()+1);
         Position p2 = new Position(position.getX(), position.getY()+2);
         Position p3 = new Position(position.getX()-1, position.getY()+2);
@@ -117,6 +114,8 @@ public class LanternaGUI implements GUI{
         drawText( screen.newTextGraphics(), p2, "'", color);
         drawText( screen.newTextGraphics(), p3, "%", color);
         drawText( screen.newTextGraphics(), p4, "&", color);
+
+        drawScore(color, score);
     }
 
     @Override
@@ -167,6 +166,110 @@ public class LanternaGUI implements GUI{
     @Override
     public void close() throws IOException {
         screen.close();
+    }
+
+    public void drawScore(String color, int number){
+        int x = 15;
+        if(number >= 10)  x = width-16;
+        if(number == 0 || number == 10){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"$$$$", color);
+        }
+
+        if(number == 1 || number == 11){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"   $", color);
+        }
+
+        if(number == 2 || number == 12){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"$   ", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"$   ", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"$$$$", color);
+        }
+
+        if(number == 3 || number == 13){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"$$$$", color);
+        }
+
+        if(number == 4 || number == 14){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"   $", color);
+        }
+
+        if(number == 5 || number == 15){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"$   ", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"$   ", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"$$$$", color);
+        }
+
+        if(number == 6 || number == 16){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"$   ", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"$   ", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"$$$$", color);
+        }
+
+        if(number == 7 || number == 17){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"   $", color);
+        }
+
+        if(number == 8 || number == 18){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"$$$$", color);
+        }
+
+        if(number == 9 || number == 19){
+            drawText(screen.newTextGraphics(), new Position(x, height-6),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-5),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-4),"$  $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-3),"$$$$", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-2),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height-1),"   $", color);
+            drawText(screen.newTextGraphics(), new Position(x, height),"   $", color);
+        }
     }
 
     public void drawTitle(String color, String color2){

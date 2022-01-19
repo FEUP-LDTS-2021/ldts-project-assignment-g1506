@@ -7,9 +7,6 @@ public class Arena {
     private Rocket rocket2;
     private List<Obstacle> obstacles;
     private List<Wall> walls;
-    //private RocketView rocketView = new RocketView();
-    //private WallView wallView = new WallView();
-    //private ObstacleView obstacleView = new ObstacleView();
 
     public void setRocket1(Rocket rocket1) {
         this.rocket1 = rocket1;

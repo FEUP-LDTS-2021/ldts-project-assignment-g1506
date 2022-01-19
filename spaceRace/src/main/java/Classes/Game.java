@@ -33,7 +33,7 @@ public class Game {
 
     public static Game getInstance() throws IOException, URISyntaxException, FontFormatException {
         if (singleton == null) {
-            singleton = new Game(120, 50, 40);
+            singleton = new Game(120, 45, 30);
         }
         return singleton;
     }
@@ -58,7 +58,7 @@ public class Game {
         this.initialTime = initialTime;
     }
 
-    public void start() throws IOException, URISyntaxException, FontFormatException {
+    public void start() throws IOException{
         int frameTime = 1000 / this.fps;
 
         gui.addKeyBoardListener(getKeyBoardObserver());

@@ -5,10 +5,7 @@ import model.Arena;
 import model.Element;
 import model.Obstacle;
 import model.Wall;
-import view.element.ElementView;
-import view.element.ObstacleView;
-import view.element.RocketView;
-import view.element.WallView;
+import view.element.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,9 +13,9 @@ import java.util.List;
 public class ArenaView {
     private final GUI gui;
     private final Arena arena;
-    RocketView rocketView = new RocketView();
-    ObstacleView obstacleView = new ObstacleView();
-    WallView wallView = new WallView();
+    RocketView rocketView;
+    ObstacleView obstacleView;
+    WallView wallView;
 
     public ArenaView(GUI gui, Arena arena){
         this.gui = gui;
@@ -31,16 +28,12 @@ public class ArenaView {
     public void draw() throws IOException {
         gui.clear();
 
-        drawBackground();
-
         rocketView.drawElement(arena.getRocket1(), gui);
         rocketView.drawElement(arena.getRocket2(), gui);
 
         for(Obstacle obstacle : arena.getObstacles()){
             obstacleView.drawElement(obstacle, gui);
         }
-
-        //MoveObstacles();
 
         for(Wall wall : arena.getWalls()){
             wallView.drawElement(wall, gui);

@@ -7,15 +7,12 @@ import model.Arena;
 import State.MenuState;
 import State.KeyBoardListener;
 import model.Position;
-import model.Rocket;
-
 import java.io.IOException;
 
 public class PlayController extends GameController implements KeyBoardListener {
     private final State state;
     private ArenaController arenaController;
     private final GUI gui;
-    //private final StateView playView;
     private long endTime;
     private final Arena arena;
     private final Position initialPos1;
@@ -26,7 +23,6 @@ public class PlayController extends GameController implements KeyBoardListener {
         this.state = state;
         this.gui = gui;
         this.arenaController = new ArenaController(state, gui, arena);
-        //this.playView = new PlayView(gui);
         this.arena = arena;
         this.endTime = 0;
         this.initialPos1 = new Position(state.getGame().getWidth()/3,state.getGame().getHeight()-2);
@@ -35,7 +31,6 @@ public class PlayController extends GameController implements KeyBoardListener {
 
     @Override
     public void step(Game game, long time) throws IOException {
-
         if(this.endTime == 0){
             arenaController.step(game, time);
         }
@@ -53,6 +48,11 @@ public class PlayController extends GameController implements KeyBoardListener {
 
     @Override
     public void keyPressed(GUI.ACTION action) {
+
+        if(arena.getWalls().size() == 0){
+            changeState(new MenuState(this.state.getGame(), this.gui));
+        }
+
         if(action == GUI.ACTION.QUIT){
             changeState(new MenuState(this.state.getGame(), this.gui));
             return;
@@ -61,6 +61,7 @@ public class PlayController extends GameController implements KeyBoardListener {
         if(action == GUI.ACTION.UP1){
             if(arena.getRocket1().getPosition().getY() == 0){
                 arena.getRocket1().setPosition(initialPos1);
+                arena.getRocket1().setScore(arena.getRocket1().getScore()+1);
                 return;
             }
             if(arena.getRocket1().getPosition().getY()>0) {
@@ -76,6 +77,7 @@ public class PlayController extends GameController implements KeyBoardListener {
         if(action == GUI.ACTION.UP2){
             if(arena.getRocket2().getPosition().getY() == 0){
                 arena.getRocket2().setPosition(initialPos2);
+                arena.getRocket2().setScore(arena.getRocket2().getScore()+1);
                 return;
             }
             if(arena.getRocket2().getPosition().getY()>0){

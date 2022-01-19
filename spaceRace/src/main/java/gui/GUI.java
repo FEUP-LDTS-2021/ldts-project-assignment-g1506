@@ -41,7 +41,7 @@ public interface GUI {
 
     void drawWall(Position position, String color);
 
-    void drawRocket(Position position, String color);
+    void drawRocket(Position position, String color, int score);
 
     void drawArrow(Position position, String color);
 

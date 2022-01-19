@@ -14,23 +14,19 @@ public class ArenaController extends GameController{
     private final ArenaView arenaView;
     private final Arena arena;
     private int aux=1;
-    //private final RocketController rocketController;
 
     public ArenaController(State state, GUI gui, Arena arena){
         super(arena);
         this.state = state;
         this.arenaView = new ArenaView(gui, arena);
         this.arena = arena;
-        //this.rocketController = new RocketController();
     }
 
     @Override
     public void step(Game game, long time) throws IOException {
-
         removeWall(game,time);
         moveObstacles();
         arenaView.draw();
-
     }
 
     public void doAction(GUI.ACTION action){
@@ -76,7 +72,7 @@ public class ArenaController extends GameController{
 
     public void removeWall(Game game , long time){
 
-        if(((time-game.initialTime)/500) > aux){
+        if(((time-game.initialTime)/900) > aux){
             aux++;
             if(arena.getWalls().isEmpty()==false)
                 arena.getWalls().remove(arena.getWalls().size()-1);
