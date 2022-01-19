@@ -31,6 +31,10 @@ public class PlayController extends GameController implements KeyBoardListener {
 
     @Override
     public void step(Game game, long time) throws IOException {
+        if(arena.getWalls().size() == 0){
+            changeState(new MenuState(this.state.getGame(), this.gui));
+        }
+
         if(this.endTime == 0){
             arenaController.step(game, time);
         }
@@ -48,10 +52,6 @@ public class PlayController extends GameController implements KeyBoardListener {
 
     @Override
     public void keyPressed(GUI.ACTION action) {
-
-        if(arena.getWalls().size() == 0){
-            changeState(new MenuState(this.state.getGame(), this.gui));
-        }
 
         if(action == GUI.ACTION.QUIT){
             changeState(new MenuState(this.state.getGame(), this.gui));
