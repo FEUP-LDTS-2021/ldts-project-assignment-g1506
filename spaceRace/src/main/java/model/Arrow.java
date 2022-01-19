@@ -16,9 +16,4 @@ public class Arrow extends Element{
     public void setPosition(Position position) {
         super.setPosition(position);
     }
-
-    @Override
-    public void draw(TextGraphics graphics) {
-
-    }
 }

@@ -38,11 +38,4 @@ public class Rocket extends Element {
     public void setColor(String color) {
         this.color = color;
     }
-
-    @Override
-    public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFF33"));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "R");
-    }
 }

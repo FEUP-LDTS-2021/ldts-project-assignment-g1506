@@ -29,12 +29,4 @@ public class Obstacle extends Element {
     public void setPosition(Position position) {
         super.setPosition(position);
     }
-
-    @Override
-    public void draw(TextGraphics graphics){
-        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFAFA"));
-        graphics.enableModifiers(SGR.BOLD);
-        graphics.putString(new TerminalPosition(position.getX(), position.getY()), "O");
-    }
-
 }
