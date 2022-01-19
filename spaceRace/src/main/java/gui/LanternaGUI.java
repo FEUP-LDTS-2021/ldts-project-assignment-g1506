@@ -30,20 +30,14 @@ public class LanternaGUI implements GUI{
         this.height = height;
     }
 
-    public LanternaGUI(TerminalScreen screen){
-        this.screen = screen;
-        this.width = 120;
-        this.height = 60;
-    }
-
     public TerminalScreen createScreen(Terminal terminal) throws IOException{
         final TerminalScreen terminalScreen;
         terminalScreen = new TerminalScreen(terminal);
 
         terminalScreen.getTerminal();
-        terminalScreen.setCursorPosition(null);   // we don't need a cursor
-        terminalScreen.startScreen();             // screens must be started
-        terminalScreen.doResizeIfNecessary();     // resize screen if necessary
+        terminalScreen.setCursorPosition(null);
+        terminalScreen.startScreen();
+        terminalScreen.doResizeIfNecessary();
         return terminalScreen;
     }
 
@@ -78,7 +72,7 @@ public class LanternaGUI implements GUI{
 
     public void drawMenu(){
         String color = "#FF6A6A";
-        String color2 = "#EEDD82";
+        String color2 = "#B0E2FF";
         String play = "PLAY";
         String inst = "INSTRUCTIONS";
         String exit = "EXIT";

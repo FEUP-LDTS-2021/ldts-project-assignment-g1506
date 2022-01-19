@@ -20,7 +20,7 @@ public class ArenaLoader extends ArenaBuilder{
     protected Rocket createRocket2(int width, int height) {
         Rocket rocket2 = new Rocket((width/3)*2,height-2);
         rocket2.setScore(10);
-        rocket2.setColor("#EEDD82");
+        rocket2.setColor("#B0E2FF");
         return rocket2;
     }
 

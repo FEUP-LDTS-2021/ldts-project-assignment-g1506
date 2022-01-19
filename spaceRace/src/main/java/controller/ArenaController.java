@@ -48,7 +48,7 @@ public class ArenaController extends GameController{
     }
 
     public boolean colisionWall(int x, Obstacle obstacle){
-        if (x<0){
+        if (x<-1){
             obstacle.setDirection(true);
             moveRight(obstacle);
             return true;
