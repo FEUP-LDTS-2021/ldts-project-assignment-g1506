@@ -37,6 +37,8 @@ public interface GUI {
 
     void drawMenu();
 
+    void drawInstructions();
+
     void drawObstacle(Position position, String color);
 
     void drawWall(Position position, String color);

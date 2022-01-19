@@ -10,6 +10,7 @@ import view.element.ArrowView;
 import view.state.MenuView;
 import view.state.StateView;
 import State.PlayState;
+import State.InstructionsState;
 
 import java.io.IOException;
 
@@ -64,10 +65,15 @@ public class MenuController implements KeyBoardListener {
 
         if(action == GUI.ACTION.ENTER){
             if(num==1){
-                state1.changeState(new PlayState(game, gui));  //primeira opção
+                state1.changeState(new PlayState(game, gui));
             }
             else if(num==2){
-                state1.changeState(state1);  //segunda opção
+                try {
+                    num=1;
+                    state1.changeState(new InstructionsState(game, gui));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             else if(num==3){
                 state1.changeState(null);

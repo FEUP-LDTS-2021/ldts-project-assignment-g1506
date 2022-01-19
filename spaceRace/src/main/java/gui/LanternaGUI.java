@@ -168,6 +168,30 @@ public class LanternaGUI implements GUI{
         screen.close();
     }
 
+    public void drawInstructions(){
+        int x = width/2 - 108/2;
+        int y = 4;
+        String color = "#FFFAFA";
+
+        drawText(screen.newTextGraphics(), new Position(x,y+0), "   $$$$$    $$$$$    $$$$$     $$$$$$    $$   $    $$$$$$    $$$$$     $$$$$    $$$$$$     $$$  $    $$$$$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+1), "    $$      $$        $$      $$$  $$   $$$  $$    $$         $$        $$     $$$  $$    $$$$  $    $$   ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+2), "    $      $$$        $       $$$  $$   $$   $$   $$$         $         $      $$   $$    $$$$ $$   $$$   ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+3), "    $      $$$$$      $       $$$ $$    $$   $$   $$$         $         $      $$   $$    $$$$ $$   $$$$$ ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+4), "   $$         $$$    $$       $$ $$$    $$   $$   $$         $$        $$      $$   $$    $$$$ $$      $$$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+5), "   $$          $$    $$       $$  $$    $$  $$$   $$         $$        $$      $   $$$    $  $ $        $$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+6), "   $$          $$    $$       $   $$    $   $$    $$         $$        $$      $   $$     $  $$$        $$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+7), "$$$$$$     $$$$$     $$       $   $$    $$$$$     $$$$$      $$      $$$$$     $$$$$$     $  $$$    $$$$$ ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+8), "$$$$$$     $$$$     $$$      $$  $$$    $$$$$     $$$$$     $$$      $$$$$     $$$$$     $$  $$$    $$$$  ",color);
+
+        String i1 = "USE W AND S TO MOVE FIRST ROCKET";
+        String i2 = "USE ARROW UP AND ARROW DOWN TO MOVE SECOND ROCKET";
+
+        drawText(screen.newTextGraphics(), new Position(width/2 - i1.length()/2,height/2), i1,color);
+        drawText(screen.newTextGraphics(), new Position(width/2 - i2.length()/2,height/2 +2), i2,color);
+        //drawText(screen.newTextGraphics(), new Position(x,height/2 +2), "USE W AND S TO MOVE FIRST ROCKET",color);
+
+    }
+
     public void drawScore(String color, int number){
         int x = 15;
         if(number >= 10)  x = width-16;

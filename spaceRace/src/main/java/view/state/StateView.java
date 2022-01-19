@@ -18,10 +18,6 @@ public abstract class StateView {
 
     public abstract void draw() throws IOException;
 
-    protected void drawText(Position position, String text,String color){
-        drawText(position, text,color);
-    }
-
     protected void drawBackground(String color){
         gui.drawBackground(textGraphics, color);
     }
