@@ -1,7 +1,7 @@
 package view.state;
 
 import gui.GUI;
-import model.Arena;
+import model.Arena.Arena;
 import model.Element;
 import model.Obstacle;
 import model.Wall;

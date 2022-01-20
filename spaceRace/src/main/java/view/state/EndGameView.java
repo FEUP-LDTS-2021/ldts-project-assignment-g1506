@@ -21,15 +21,15 @@ public class EndGameView extends StateView{
     public void draw() throws IOException {
         if (rocket1.getScore() == rocket2.getScore()-10) {
             int x = 20;
-            gui.drawText(gui.createTextGraphics(), new Position(x, 10), " $$$$$$   $$$$$$  $$$   $$$$$          $$$      $$$$$$    $$$$$$    $$$$$$", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 11), "   $$       $$    $$    $$            $ $$        $$        $$      $$    ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 12), "   $        $     $    $$$            $ $$        $         $      $$$    ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 13), "   $        $          $$$$$         $$ $$        $         $      $$$    ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 14), "  $$       $$           $$$$$        $$ $$       $$        $$      $$$$   ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 15), "  $$       $$              $$       $$$ $$       $$        $$      $$     ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 16), "  $        $               $$       $$$$$$       $         $       $$     ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 17), "$$$$       $           $$$$$        $$ $$$       $       $$$$      $$$$   ", "#FFFAFA");
-            gui.drawText(gui.createTextGraphics(), new Position(x, 18), "$$$$$     $$           $$$$        $$  $$$      $$       $$$$$     $$$$$  ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 10), " $$$$$$   $$$$$$  $$   $$$$$           $$$       $$$$$$    $$$$$$    $$$$$$", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 11), "   $$       $$    $$   $$             $ $$         $$        $$      $$    ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 12), "   $        $     $   $$$             $ $$         $         $      $$$    ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 13), "   $        $         $$$$$          $$ $$         $         $      $$$    ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 14), "  $$       $$          $$$$$         $$ $$        $$        $$      $$$$   ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 15), "  $$       $$             $$        $$$ $$        $$        $$      $$     ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 16), "  $        $              $$        $$$$$$        $         $       $$     ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 17), "$$$$       $          $$$$$         $$ $$$        $       $$$$      $$$$   ", "#FFFAFA");
+            gui.drawText(gui.createTextGraphics(), new Position(x, 18), "$$$$$     $$          $$$$         $$  $$$       $$       $$$$$     $$$$$  ", "#FFFAFA");
 
         }
 

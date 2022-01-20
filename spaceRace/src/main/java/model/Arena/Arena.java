@@ -1,4 +1,8 @@
-package model;
+package model.Arena;
+
+import model.Obstacle;
+import model.Rocket;
+import model.Wall;
 
 import java.util.List;
 

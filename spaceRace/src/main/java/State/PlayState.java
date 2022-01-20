@@ -3,8 +3,8 @@ package State;
 import Classes.Game;
 import controller.PlayController;
 import gui.GUI;
-import model.Arena;
-import model.ArenaLoader;
+import model.Arena.Arena;
+import model.Arena.ArenaLoader;
 
 import java.io.IOException;
 

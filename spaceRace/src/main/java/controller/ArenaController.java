@@ -3,7 +3,7 @@ package controller;
 import Classes.Game;
 import State.State;
 import gui.GUI;
-import model.Arena;
+import model.Arena.Arena;
 import model.Obstacle;
 import model.Position;
 import view.state.ArenaView;
