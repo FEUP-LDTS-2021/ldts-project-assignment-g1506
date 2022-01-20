@@ -26,6 +26,9 @@ public class InstructionsController implements KeyBoardListener {
 
     @Override
     public void keyPressed(GUI.ACTION action) {
+        if(action == GUI.ACTION.QUIT){
+            state.changeState(new MenuState(this.state.getGame(), gui));
+        }
         if(action == GUI.ACTION.ENTER){
             state.changeState(new MenuState(this.state.getGame(), gui));
         }

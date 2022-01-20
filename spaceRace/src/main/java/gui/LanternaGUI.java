@@ -11,6 +11,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -26,6 +27,8 @@ public class LanternaGUI implements GUI{
         AWTTerminalFontConfiguration fontConfig = loadFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
         this.screen = createScreen(terminal);
+        ((AWTTerminalFrame) terminal).setTitle("SPACE RACE");
+        ((AWTTerminalFrame) terminal).setIconImage(ImageIO.read(getClass().getClassLoader().getResource("rocket.png")));
         this.width = width;
         this.height = height;
     }
@@ -209,12 +212,17 @@ public class LanternaGUI implements GUI{
         drawText(screen.newTextGraphics(), new Position(x,y+7), "$$$$$$     $$$$$     $$       $   $$    $$$$$     $$$$$      $$      $$$$$     $$$$$$     $  $$$    $$$$$ ",color);
         drawText(screen.newTextGraphics(), new Position(x,y+8), "$$$$$$     $$$$     $$$      $$  $$$    $$$$$     $$$$$     $$$      $$$$$     $$$$$     $$  $$$    $$$$  ",color);
 
-        String i1 = "USE W AND S TO MOVE FIRST ROCKET";
-        String i2 = "USE ARROW UP AND ARROW DOWN TO MOVE SECOND ROCKET";
+        String i1 = "* PLAYER 1 USE W AND S TO MOVE THE ROCKET UP AND DOWN ";
+        String i2 = "* PLAYER 2 USE ARROW UP AND ARROW DOWN TO MOVE THE ROCKET UP AND DOWN";
+        String i3 = "* THE GAME END WHEN TIME RUNS OUT AND IS SEEN BY THE WALL";
+        String i4 = "* THE PLAYER WITH HIGHEST SCORE IS THE WINNER!";
+        String i5 = "* USE ESCAPE TO GO BACK TO MENU";
 
         drawText(screen.newTextGraphics(), new Position(width/2 - i1.length()/2,height/2), i1,color);
-        drawText(screen.newTextGraphics(), new Position(width/2 - i2.length()/2,height/2 +2), i2,color);
-        //drawText(screen.newTextGraphics(), new Position(x,height/2 +2), "USE W AND S TO MOVE FIRST ROCKET",color);
+        drawText(screen.newTextGraphics(), new Position(width/2 - i2.length()/2,height/2 + 3), i2,color);
+        drawText(screen.newTextGraphics(), new Position(width/2 - i3.length()/2,height/2 + 6), i3,color);
+        drawText(screen.newTextGraphics(), new Position(width/2 - i4.length()/2,height/2 + 9), i4,color);
+        drawText(screen.newTextGraphics(), new Position(width/2 - i5.length()/2,height/2 + 12), i5,color);
 
     }
 
