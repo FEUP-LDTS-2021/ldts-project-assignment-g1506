@@ -7,6 +7,8 @@ import model.Arena;
 import State.MenuState;
 import State.KeyBoardListener;
 import model.Position;
+import view.state.EndGameView;
+
 import java.io.IOException;
 
 public class PlayController extends GameController implements KeyBoardListener {
@@ -22,17 +24,18 @@ public class PlayController extends GameController implements KeyBoardListener {
         super(arena);
         this.state = state;
         this.gui = gui;
-        this.arenaController = new ArenaController(state, gui, arena);
-        this.arena = arena;
-        this.endTime = 0;
         this.initialPos1 = new Position(state.getGame().getWidth()/3,state.getGame().getHeight()-2);
         this.initialPos2 = new Position((state.getGame().getWidth()/3)*2,state.getGame().getHeight()-2);
+        this.arenaController = new ArenaController(state, gui, arena,initialPos1,initialPos2);
+        this.arena = arena;
+        this.endTime = 0;
     }
 
     @Override
     public void step(Game game, long time) throws IOException {
-        if(arena.getWalls().size() == 0){
-            endGame();
+        if(arena.getWalls().isEmpty()){
+            EndGameView endGameView = new EndGameView(gui, arena.getRocket1(), arena.getRocket2() );
+            endGameView.draw();
             changeState(new MenuState(this.state.getGame(), this.gui));
         }
 
@@ -43,10 +46,6 @@ public class PlayController extends GameController implements KeyBoardListener {
 
     public void changeState(State state){
         this.state.changeState(state);
-    }
-
-    public void endGame() throws IOException{
-
     }
 
     @Override
@@ -96,3 +95,4 @@ public class PlayController extends GameController implements KeyBoardListener {
     public Position moveDown2(){return new Position(arena.getRocket2().getPosition().getX(), arena.getRocket2().getPosition().getY()+1);}
 
 }
+

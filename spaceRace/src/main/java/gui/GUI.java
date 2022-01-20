@@ -23,6 +23,8 @@ public interface GUI {
 
     int getHeight();
 
+    void drawRectangle(TextGraphics textGraphics, String color, int width, int height, Position pos);
+
     void drawBackground(TextGraphics textGraphics, String color);
 
     void clear();
@@ -35,7 +37,13 @@ public interface GUI {
 
     boolean isActive();
 
+    void drawText(TextGraphics textGraphics, Position position, String text, String color);
+
     void drawMenu();
+
+    void winner1();
+
+    void winner2();
 
     void drawInstructions();
 

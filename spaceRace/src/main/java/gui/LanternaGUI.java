@@ -70,6 +70,12 @@ public class LanternaGUI implements GUI{
         return ((AWTTerminalFrame) screen.getTerminal()).isDisplayable();
     }
 
+    @Override
+    public void drawRectangle(TextGraphics textGraphics, String color, int width, int height, Position pos) {
+        textGraphics.setBackgroundColor(TextColor.Factory.fromString(color));
+        textGraphics.fillRectangle(new TerminalPosition(pos.getX(), pos.getY()), new TerminalSize(width, height), ' ');
+    }
+
     public void drawMenu(){
         String color = "#FF6A6A";
         String color2 = "#B0E2FF";
@@ -160,6 +166,32 @@ public class LanternaGUI implements GUI{
     @Override
     public void close() throws IOException {
         screen.close();
+    }
+
+    public void winner1(){
+        int x = 85;
+        drawText(screen.newTextGraphics(), new Position(x, 10), "   $$$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 11), "    $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 12), "    $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 13), "    $", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 14), "   $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 15), "   $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 16), "   $ ", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 17), " $$$$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 18), "$$$$$$$", "#FFFAFA");
+    }
+
+    public void winner2(){
+        int x = 85;
+        drawText(screen.newTextGraphics(), new Position(x, 10), "   $$$$$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 11), "      $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 12), "      $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 13), "     $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 14), " $$$$$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 15), " $$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 16), " $ ", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 17), " $$$$$", "#FFFAFA");
+        drawText(screen.newTextGraphics(), new Position(x, 18), "$$$$$$$", "#FFFAFA");
     }
 
     public void drawInstructions(){
