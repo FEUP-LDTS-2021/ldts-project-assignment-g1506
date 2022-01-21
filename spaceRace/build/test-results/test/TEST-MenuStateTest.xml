@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MenuStateTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-21T00:33:02" hostname="LAPTOP-LMOCJUM2" time="0.586">
+  <properties/>
+  <testcase name="startTest()" classname="MenuStateTest" time="0.577"/>
+  <testcase name="setControllerTest()" classname="MenuStateTest" time="0.004"/>
+  <testcase name="stepTest()" classname="MenuStateTest" time="0.002"/>
+  <testcase name="getControllerTest()" classname="MenuStateTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

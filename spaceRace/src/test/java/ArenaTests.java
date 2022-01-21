@@ -1,4 +1,12 @@
-public class DisplayTest {
+import Classes.Game;
+import model.Arena.Arena;
+import model.Position;
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+
+public class ArenaTests {
 
     //Tests if the rockets are in the right initial position
     /*@Test
@@ -6,7 +14,9 @@ public class DisplayTest {
         int x = 120;
         int y = 40;
         int fps = 30;
+        Arena arena = new Arena();
         Game game = new Game(x,y, fps);
+        arena.
         int width1 = game.display.rocket1.getPosition().getX();
         int height1 = game.display.rocket1.getPosition().getY();
         int width2 = game.display.rocket2.getPosition().getX();
@@ -141,5 +151,12 @@ public class DisplayTest {
     }
 
      */
+
+    @Property
+    public void testSum(@ForAll int a, @ForAll int b){
+        assert(a+b == b+a);
+    }
+
+
 
 }
