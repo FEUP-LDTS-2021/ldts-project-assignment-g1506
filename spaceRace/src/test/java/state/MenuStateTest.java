@@ -1,3 +1,5 @@
+package state;
+
 import Classes.Game;
 import State.MenuState;
 import controller.MenuController;

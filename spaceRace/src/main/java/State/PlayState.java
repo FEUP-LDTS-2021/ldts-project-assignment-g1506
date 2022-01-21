@@ -39,14 +39,6 @@ public class PlayState extends State{
         this.playController = playController;
     }
 
-    public Arena getArena() {
-        return arena;
-    }
-
-    public void setArena(Arena arena){
-        this.arena = arena;
-    }
-
     public boolean firstTime(){
         if (aux == true){
             aux=false;
