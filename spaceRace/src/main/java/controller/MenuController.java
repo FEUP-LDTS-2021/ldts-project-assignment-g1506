@@ -39,6 +39,7 @@ public class MenuController implements KeyBoardListener {
         gui.refresh();
     }
 
+    @Override
     public void keyPressed(GUI.ACTION action){
 
         if(action == GUI.ACTION.QUIT){

@@ -64,7 +64,6 @@ public class Game {
         gui.addKeyBoardListener(getKeyBoardObserver());
 
         this.state.start();
-        boolean first = true;
         while ( state != null ) {
 
             long startTime = System.currentTimeMillis();

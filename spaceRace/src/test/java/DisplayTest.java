@@ -1,4 +1,4 @@
-public class DisplayTest {
+/*public class DisplayTest {
 
     //Tests if the rockets are in the right initial position
     /*@Test
@@ -140,6 +140,6 @@ public class DisplayTest {
         Assertions.assertEquals(true, aux);
     }
 
-     */
 
-}
+
+}*/

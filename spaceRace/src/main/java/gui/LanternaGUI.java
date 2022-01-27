@@ -79,6 +79,7 @@ public class LanternaGUI implements GUI{
         textGraphics.fillRectangle(new TerminalPosition(pos.getX(), pos.getY()), new TerminalSize(width, height), ' ');
     }
 
+    @Override
     public void drawMenu(){
         String color = "#FF6A6A";
         String color2 = "#B0E2FF";
@@ -146,11 +147,13 @@ public class LanternaGUI implements GUI{
         return height;
     }
 
+    @Override
     public void drawBackground(TextGraphics textGraphics, String color){
         textGraphics.setBackgroundColor(TextColor.Factory.fromString(color));
         textGraphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(this.width, this.height), ' ');
     }
 
+    @Override
     public void drawText(TextGraphics textGraphics, Position position, String text, String color) {
         textGraphics.setForegroundColor(TextColor.Factory.fromString(color));
         textGraphics.putString(position.getX(),position.getY(),text);
@@ -171,6 +174,7 @@ public class LanternaGUI implements GUI{
         screen.close();
     }
 
+    @Override
     public void winner1(){
         int x = 85;
         drawText(screen.newTextGraphics(), new Position(x, 10), "   $$$", "#FFFAFA");
@@ -184,6 +188,7 @@ public class LanternaGUI implements GUI{
         drawText(screen.newTextGraphics(), new Position(x, 18), "$$$$$$$", "#FFFAFA");
     }
 
+    @Override
     public void winner2(){
         int x = 85;
         drawText(screen.newTextGraphics(), new Position(x, 10), "   $$$$$", "#FFFAFA");
@@ -197,6 +202,7 @@ public class LanternaGUI implements GUI{
         drawText(screen.newTextGraphics(), new Position(x, 18), "$$$$$$$", "#FFFAFA");
     }
 
+    @Override
     public void drawInstructions(){
         int x = width/2 - 108/2;
         int y = 4;

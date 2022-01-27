@@ -12,6 +12,7 @@ public class Position {
     }
 
     @Override
+    @SuppressWarnings("EqualsHashCode")
     public boolean equals(Object o) {
         if (this == o) return true;
 
