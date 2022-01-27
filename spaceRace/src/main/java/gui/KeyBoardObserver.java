@@ -5,11 +5,22 @@ import State.KeyBoardListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class KeyBoardObserver extends KeyAdapter {
     private KeyBoardListener listener;
 
-    public KeyBoardObserver(){}
+    public KeyBoardObserver(){
+        //keys = new HashMap<>();
+        //keys.put(KeyEvent.VK_ESCAPE, GUI.ACTION.QUIT);
+    }
+/*
+    HashMap<Integer, GUI.ACTION> keys;
+
+    public void keyPressed1(KeyEvent e) {
+        listener.keyPressed(keys.get(e));
+    }
+  */
 
     @Override
     public void keyPressed(KeyEvent e) {
