@@ -204,19 +204,19 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawInstructions(){
-        int x = width/2 - 108/2;
+        int x = width/2 - 118/2;
         int y = 4;
         String color = "#FFFAFA";
 
-        drawText(screen.newTextGraphics(), new Position(x,y+0), "   $$$$$    $$$$$    $$$$$     $$$$$$    $$   $    $$$$$$    $$$$$     $$$$$    $$$$$$     $$$  $    $$$$$",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+1), "    $$      $$        $$      $$$  $$   $$$  $$    $$         $$        $$     $$$  $$    $$$$  $    $$   ",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+2), "    $      $$$        $       $$$  $$   $$   $$   $$$         $         $      $$   $$    $$$$ $$   $$$   ",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+3), "    $      $$$$$      $       $$$ $$    $$   $$   $$$         $         $      $$   $$    $$$$ $$   $$$$$ ",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+4), "   $$         $$$    $$       $$ $$$    $$   $$   $$         $$        $$      $$   $$    $$$$ $$      $$$",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+5), "   $$          $$    $$       $$  $$    $$  $$$   $$         $$        $$      $   $$$    $  $ $        $$",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+6), "   $$          $$    $$       $   $$    $   $$    $$         $$        $$      $   $$     $  $$$        $$",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+7), "$$$$$$     $$$$$     $$       $   $$    $$$$$     $$$$$      $$      $$$$$     $$$$$$     $  $$$    $$$$$ ",color);
-        drawText(screen.newTextGraphics(), new Position(x,y+8), "$$$$$$     $$$$     $$$      $$  $$$    $$$$$     $$$$$     $$$      $$$$$     $$$$$     $$  $$$    $$$$  ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+0), "   $$$$$     $$$  $    $$$$$    $$$$$     $$$$$$    $$   $    $$$$$$    $$$$$     $$$$$    $$$$$$     $$$  $    $$$$$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+1), "    $$      $$$$  $    $$        $$      $$$  $$   $$$  $$    $$         $$        $$     $$$  $$    $$$$  $    $$   ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+2), "    $       $$$$ $$   $$$        $       $$$  $$   $$   $$   $$$         $         $      $$   $$    $$$$ $$   $$$   ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+3), "    $       $$$$ $$   $$$$$      $       $$$ $$    $$   $$   $$$         $         $      $$   $$    $$$$ $$   $$$$$ ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+4), "   $$       $$$$ $$      $$$    $$       $$ $$$    $$   $$   $$         $$        $$      $$   $$    $$$$ $$      $$$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+5), "   $$       $  $ $        $$    $$       $$  $$    $$  $$$   $$         $$        $$      $   $$$    $  $ $        $$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+6), "   $$       $  $$$        $$    $$       $   $$    $   $$    $$         $$        $$      $   $$     $  $$$        $$",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+7), "$$$$$$      $  $$$    $$$$$     $$       $   $$    $$$$$     $$$$$      $$      $$$$$     $$$$$$     $  $$$    $$$$$ ",color);
+        drawText(screen.newTextGraphics(), new Position(x,y+8), "$$$$$$     $$  $$$    $$$$     $$$      $$  $$$    $$$$$     $$$$$     $$$      $$$$$     $$$$$     $$  $$$    $$$$  ",color);
 
         String i1 = "* PLAYER 1 USE W AND S TO MOVE THE ROCKET UP AND DOWN ";
         String i2 = "* PLAYER 2 USE ARROW UP AND ARROW DOWN TO MOVE THE ROCKET UP AND DOWN";
