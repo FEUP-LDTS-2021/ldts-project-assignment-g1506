@@ -18,7 +18,7 @@ public class Position {
 
         if (o == null) return false;
 
-        if (getClass() != o.getClass()) return false;
+        if (!(o instanceof Position)) return false;
 
         Position p = (Position) o;
         return x == p.getX() && y == p.getY();
