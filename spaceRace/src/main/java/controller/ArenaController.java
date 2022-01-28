@@ -83,7 +83,6 @@ public class ArenaController extends GameController{
         }
     }
 
-    //CHECK COLISIONS
     public void checkColisions(){
 
         for (Obstacle obstacles: arena.getObstacles()){

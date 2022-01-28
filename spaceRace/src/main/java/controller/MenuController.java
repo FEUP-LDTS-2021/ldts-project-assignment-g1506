@@ -42,7 +42,6 @@ public class MenuController implements KeyBoardListener {
     public void keyPressed(GUI.ACTION action){
 
         if(action == GUI.ACTION.QUIT){
-            System.out.println("entrou");
             state1.changeState(null);
         }
 
