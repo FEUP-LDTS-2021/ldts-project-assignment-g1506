@@ -1,4 +1,4 @@
-package state;
+package state1;
 
 import Classes.Game;
 import State.PlayState;
@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class PlayStateTest {
     private PlayState state;
@@ -68,5 +67,5 @@ public class PlayStateTest {
 
         Assertions.assertEquals(state.getPlayController(), newPlayingController);
     }
-    
+
 }

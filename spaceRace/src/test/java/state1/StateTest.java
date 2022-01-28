@@ -1,4 +1,4 @@
-package state;
+package state1;
 
 import Classes.Game;
 import State.State;
@@ -9,8 +9,8 @@ import org.mockito.Mockito;
 
 import java.io.IOException;
 
-
 public class StateTest {
+
     private State state;
     private Game game;
 

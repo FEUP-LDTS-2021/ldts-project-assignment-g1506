@@ -1,4 +1,4 @@
-package state;
+package state1;
 
 import Classes.Game;
 import State.MenuState;
