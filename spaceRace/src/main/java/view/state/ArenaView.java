@@ -42,16 +42,4 @@ public class ArenaView {
         gui.refresh();
 
     }
-
-    /*private void drawBackground(){
-    }
-
-   private <T extends Element> void drawElements(List<T> elements, ElementView<T> view) throws IOException {
-        for(T element : elements)
-            drawElement(element, view);
-    }*/
-
-   /* private <T extends Element> void drawElement(T element, ElementView<T> view) throws IOException {
-        view.drawElement(element, gui);
-    }*/
 }

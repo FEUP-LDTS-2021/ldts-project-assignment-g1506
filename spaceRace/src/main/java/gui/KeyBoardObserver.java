@@ -4,7 +4,6 @@ import State.KeyBoardListener;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 
 public class KeyBoardObserver extends KeyAdapter {
     private KeyBoardListener listener;
