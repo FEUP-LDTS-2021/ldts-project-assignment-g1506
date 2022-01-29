@@ -163,7 +163,7 @@ The classes can be found in the following files:
 - [GUI] 
 (https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/GUI.java)
     
-. [LanternaGUI]
+- [LanternaGUI]
 (https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/LanternaGUI.java)
 
 **Consequences**
