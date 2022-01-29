@@ -9,6 +9,8 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
 
 For a more detailed version of this description click [here](./docs/README.md).
 
+## Some screenshots of the gameplay that illustrate the main functionalities:
+
 ### Game Preview
 
 <p align="center" justify="center">
@@ -19,4 +21,36 @@ For a more detailed version of this description click [here](./docs/README.md).
 
 <p align="center" justify="center">
   <img src="docs/Imagens/Menu.png"/>
+</p>
+
+## Instructions
+
+<p align="center" justify="center">
+  <img src="docs/Imagens/Instructions.png"/>
+</p>
+
+## Initial State
+
+<p align="center" justify="center">
+  <img src="docs/Imagens/Game0.png"/>
+</p>
+
+## End of the game
+
+- When player1 wins 
+
+<p align="center" justify="center">
+  <img src="docs/Imagens/Game11.png"/>
+</p>
+
+- When player2 wins
+
+<p align="center" justify="center">
+  <img src="docs/Imagens/Game2.png"/>
+</p>
+
+- When the game ends in a draw
+
+<p align="center" justify="center">
+  <img src="docs/Imagens/GameTie.png"/>
 </p>
