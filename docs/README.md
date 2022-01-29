@@ -51,14 +51,11 @@ The following figure shows how the pattern's roles were mapped to the applicatio
 
 The classes can be found in the following files:
 
-- [MenuState]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/State/MenuState.java)
+- [MenuState](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/State/MenuState.java)
 
-- [PlayState]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/State/PlayState.java)
+- [PlayState](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/State/PlayState.java)
 
-- [InstrucionsState]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/State/InstructionsState.java)
+- [InstrucionsState](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/State/InstructionsState.java)
 
 **Consequences**
 
@@ -86,14 +83,11 @@ So we can control each state and each object in different parts: one works only 
     
 The classes can be found in the following files:
     
-- [Model]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/model)
+- [Model](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/model)
     
-- [View]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/view)
+- [View](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/view)
  
-- [Controller]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/controller)
+- [Controller](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/controller)
 
 **Consequences**
 
@@ -122,20 +116,15 @@ This mechanism notify multiple objects about any events that happen to the objec
     
 The classes can be found in the following files:
 
-- [KeyBoardObserver]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/KeyBoardObserver.java)
+- [KeyBoardObserver](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/KeyBoardObserver.java)
     
-- [ArenaController]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/ArenaController.java)
+- [ArenaController](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/ArenaController.java)
     
-- [MenuController]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/MenuController.java)
+- [MenuController](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/MenuController.java)
     
-- [PlayController]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/PlayController.java)
+- [PlayController](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/PlayController.java)
     
-- [Instructionscontroller]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/InstructionsController.java)
+- [Instructionscontroller](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/InstructionsController.java)
     
 **Consequences**
 
@@ -160,11 +149,9 @@ We used the **Facade** pattern, this pattern provides a simple interface to a co
     
 The classes can be found in the following files:
 
-- [GUI] 
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/GUI.java)
+- [GUI](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/GUI.java)
     
-- [LanternaGUI]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/LanternaGUI.java)
+- [LanternaGUI](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/LanternaGUI.java)
 
 **Consequences**
 
@@ -188,14 +175,11 @@ The action of the game takes place in an arena, which contains rockets, obstacle
     
 The classes can be found in the following files:
     
-- [ArenaBuilder]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/model/Arena/ArenaBuilder.java)
+- [ArenaBuilder](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/model/Arena/ArenaBuilder.java)
     
-- [ArenaLoader]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/model/Arena/ArenaLoader.java)
+- [ArenaLoader](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/model/Arena/ArenaLoader.java)
     
-- [Arena]
-(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/model/Arena)
+- [Arena](https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/model/Arena)
 
 **Consequences**
 
