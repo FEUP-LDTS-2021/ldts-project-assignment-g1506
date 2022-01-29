@@ -2,7 +2,7 @@
 
 ## Game Description
 
-In a race against your opponent you have to reach the top to score one point. Along the way you can´t collide with the obstacles.
+In a race against your opponent you have to reach the top to score points. Along the way you can´t collide with the obstacles.
 If you score more points that your opponent, before the time runs out, you win!
 
 This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva (up202006094@fe.up.pt) for LDTS 2021/2022.
@@ -57,7 +57,7 @@ The use of the State Pattern in the current design allows the following benefits
 
 **Problem in Context**
 
-Having a way to manage each state and objects in different parts. 
+Have a way to manage each state and objects in different parts. 
 
 **The Pattern**
 
@@ -75,13 +75,59 @@ The use of this pattern int the current design allows the following benefits:
 - Increase the flexibility and scalability of the application.
 
 #### OBSERVERS AND LISTENERS
-Observer Pattern
+
+**Problem in Context**
+
+In our game, obstacles are always moving, so it is necessary that the game does not stop for users to make inputs.
+For this reason, there needs to be a way for the game to always be ready to receive an input.
+
+**The Pattern**
+
+In order to resolve our problem we implemented the **Observer** pattern an **Behavioural Pattern**. This pattern allow us to have an observer, in this case, a keyboard observer.
+This mechanism notify multiple objects about any events that happen to the object they are observing.
+
+**Implementation**
+
+**Consequences**
+
+- Abstract coupling between subject and observer.
+- Clean code.
+- Organization improved.
 
 #### GUI
-Facade Pattern
+
+**Problem in Context**
+
+In our program we constantly need to draw the objects and it is important to easly access and change the code. The lanterna library have the right tools to make this job, so we must make this library connect with each object.
+
+**The Pattern**
+
+We used the **Facade** pattern, this pattern provides a simple interface to a complex subsystem which contains lots of moving parts, including only the most important functions.
+
+**Implementation**
+
+**Consequences**
+
+- Minimizes complexity of sub-systems.
+- Aids principle of loose coupling.
+- Expand lanterna funcionalities.
 
 #### ARENA BUILDER
-Factory method and builder pattern
+
+**Problem in Context**
+
+The action of the game takes place in an arena, which contains rockets, obstacles and a wall. All this elements have to be created and set into the arena. The proccess has to be divided and organized into diferent parts.
+
+**The Pattern**
+**Factory Method** is a creational design pattern that provides an interface for creating objects in a superclass, but allows to alter the type of objects that will be created. **Builder** pattern is also a creational pattern that lets you construct complex objects step by step.
+
+**Implementation**
+
+**Consequences**
+
+- Allows the sub-classes to choose the type of objetcs to create.
+- It promotes the loose-coupling by eliminating the need to bind application-specific classes into the code.
+- Construct objects step by step.
 
 #### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
 
