@@ -1,45 +1,22 @@
-# ldts-project-assignment-g1506
-ldts-project-assignment-g1506 created by GitHub Classroom
-## LDTS_1506 <SPACE RACE>
+# LDTS_T15_G06 - SPACE RACE
 
-In a race against your opponent you have to reach the top to score one point. Along the way you can´t collide with the obstacles.
+## Game Description
+
+In a race against your opponent you have to reach the top to score points. Along the way you can´t collide with the obstacles.
 If you score more points that your opponent, before the time runs out, you win!
+
 This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva (up202006094@fe.up.pt) for LDTS 2021/2022.
 
-### IMPLEMENTED FEATURES
+For a more detailed version of this description click [here](./docs/README.md).
 
-- **Moving Up** - The rocket number 1 will move up when 'w' is pressed, and the rocket number 2 will move up when Arrow Up is pressed.
-- **Moving Down** - The rocket number 1 will move down when 's' is pressed and the rocket number 2 will move down when Arrow Down is pressed.
+### Game Preview
 
-  ![image](https://user-images.githubusercontent.com/78104669/148663193-7cf36942-92de-4c83-8206-20f6da60b303.png)
-  
-  ![image](https://user-images.githubusercontent.com/78104669/148663210-31873a2c-914c-4a18-87ad-ff4092fdcb75.png)
+<p align="center" justify="center">
+  <img src="docs/GIF/Gameplay.gif"/>
+</p>
 
-### PLANNED FEATURES
+## Menu 
 
-- **Movement of the obstacles** - Obstacles will move horizontly.
-- **Colisions with obstacles** - When any rocket is in the same position of an obstacle, the rocket will return to the initial position.
-- **Points** - Points will be increased when one rocket reach the top.
-- **Menu** - Menu with the options.
-- **Time of the game** - A bar represents the time and goes down until the time runs out.
-  
-#### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
-
-#### Duplicate Code
-
-The 'Rocket()', 'Obstacle()' and 'Wall()' classes have duplicate code.
-
-A way to improve the code would be the removal of the duplicate code and implementation of the 'Member()' abstact class. 'Rocket()', 'Obstacle()', 'Wall()' will extend this abstract class.
-  
-### TESTING
-  
-#### Coverage Report
-  
-![image](https://user-images.githubusercontent.com/78104669/148666486-fc0a72a5-bc20-4914-8e55-d45d49e09bff.png)
-
-[Coverage Report ](https:spaceRace/CoverageReport/index.html)
-
-### SELF-EVALUATION
--Hugo Castro: 50%.
-  
--Luís Paiva: 50%.
+<p align="center" justify="center">
+  <img src="docs/Imagens/Menu.png"/>
+</p>
