@@ -9,6 +9,20 @@ This project was developed by Hugo Castro (up202006770@fe.up.pt) and Luís Paiva
 
 ## Implemented Features
 
+- **Moving Up** - The rocket number 1 will move up when 'w' is pressed, and the rocket number 2 will move up when Arrow Up is pressed.
+
+- **Moving Down** - The rocket number 1 will move down when 's' is pressed and the rocket number 2 will move down when Arrow Down is pressed.
+
+- **Movement of the obstacles** - Obstacles move only horizontally and when they collide with the end of the Lanterna, they change direction.
+
+- **Colisions with obstacles** - When any rocket is in the same position of an obstacle, the rocket will return to the initial position.
+
+- **Points** - Points will be increased when one rocket reach the top and the user can see your score in the Lanterna screen.
+
+- **Menu** - Menu with the options (Play, Instructions,Exit).
+
+- **Time of the game** - A wall represents the time and goes down until the time runs out.
+
 ## Planned Features
 
 All the planned features were successfuly implemented.
@@ -69,6 +83,17 @@ So we can control each state and each object in different parts: one works only 
   
   <p align="center" justify="center">
   <img src="UML/MVCUML.png"/>
+    
+The classes can be found in the following files:
+    
+- [Model]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/model)
+    
+- [View]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/view)
+ 
+- [Controller]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/controller)
 
 **Consequences**
 
@@ -95,6 +120,23 @@ This mechanism notify multiple objects about any events that happen to the objec
   <p align="center" justify="center">
   <img src="UML/ObserversUML.png"/>
     
+The classes can be found in the following files:
+
+- [KeyBoardObserver]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/KeyBoardObserver.java)
+    
+- [ArenaController]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/ArenaController.java)
+    
+- [MenuController]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/MenuController.java)
+    
+- [PlayController]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/PlayController.java)
+    
+- [Instructionscontroller]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/controller/InstructionsController.java)
+    
 **Consequences**
 
 - Abstract coupling between subject and observer.
@@ -115,6 +157,14 @@ We used the **Facade** pattern, this pattern provides a simple interface to a co
     
   <p align="center" justify="center">
   <img src="UML/GUIUML.png"/>
+    
+The classes can be found in the following files:
+
+- [GUI] 
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/GUI.java)
+    
+. [LanternaGUI]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/gui/LanternaGUI.java)
 
 **Consequences**
 
@@ -135,6 +185,17 @@ The action of the game takes place in an arena, which contains rockets, obstacle
       
   <p align="center" justify="center">
   <img src="UML/BuilderUML.png"/>
+    
+The classes can be found in the following files:
+    
+- [ArenaBuilder]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/model/Arena/ArenaBuilder.java)
+    
+- [ArenaLoader]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/blob/master/spaceRace/src/main/java/model/Arena/ArenaLoader.java)
+    
+- [Arena]
+(https://github.com/FEUP-LDTS-2021/ldts-project-assignment-g1506/tree/master/spaceRace/src/main/java/model/Arena)
 
 **Consequences**
 
@@ -143,6 +204,20 @@ The action of the game takes place in an arena, which contains rockets, obstacle
 - Construct objects step by step.
 
 #### KNOWN CODE SMELLS AND REFACTORING SUGGESTIONS
+
+#### *Large Class or Method*
+The classes Game, ArenaController contain many fields and the class LanternaGUI contain a lot of methods. In the Classes Game and the class ArenaController, we need to store a lot of data, this is because the Game class is the base of the program and the ArenaController controls what happen inside the the game. In other hand, LaternaGUI need a lot of methods for the interface and it wouldn't make sense to slip it.
+
+#### *Data Class*
+All model Classes are Data Classes,as they contain only fields, and no behaviour (dumb classes). This is caused by the arquitectural pattern *MVC* (Model-View-Controller),where the controller is the responsabel to implement the logic functionalities of each model.
+For us this is not a bad smell beacuse it only exits due the chosen design pattern.
+
+#### *Refused bequest*
+Throughout the code we were creating somo abstract classes to make our project simpler and clear.However, this resulted in a *Refused bequest* smell.
+As a result, some classes inherited methods from. The parent class that were not defined or used (e.g Class Play State)
+
+#### *Switch Statements*
+In the beginning we start by using the switch statement to move the rockets, to escape and to use the enter key. When we realized the existence of the code smell we changed it to a hash map which made the code simpler.
 
 ### TESTING
 
