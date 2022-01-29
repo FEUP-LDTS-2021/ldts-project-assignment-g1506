@@ -32,7 +32,8 @@ In the menu when we choose the play option, it switch to the PlayState, when we 
 
 The following figure shows how the pattern's roles were mapped to the application classes.
 
-Imagem. (qual a imagem a pôr)
+<p align="center" justify="center">
+  <img src="UML/StateUML.png"/>
 
 The classes can be found in the following files:
 
@@ -65,6 +66,9 @@ We used the **Model-View-Controller** pattern that belongs to **Architectural Pa
 So we can control each state and each object in different parts: one works only with its model, another works with the way it is seen and the last one works with the different actions.
 
 **Implementation**
+  
+  <p align="center" justify="center">
+  <img src="UML/MVCUML.png"/>
 
 **Consequences**
 
@@ -87,7 +91,10 @@ In order to resolve our problem we implemented the **Observer** pattern an **Beh
 This mechanism notify multiple objects about any events that happen to the object they are observing.
 
 **Implementation**
-
+    
+  <p align="center" justify="center">
+  <img src="UML/ObserversUML.png"/>
+    
 **Consequences**
 
 - Abstract coupling between subject and observer.
@@ -105,6 +112,9 @@ In our program we constantly need to draw the objects and it is important to eas
 We used the **Facade** pattern, this pattern provides a simple interface to a complex subsystem which contains lots of moving parts, including only the most important functions.
 
 **Implementation**
+    
+  <p align="center" justify="center">
+  <img src="UML/GUIUML.png"/>
 
 **Consequences**
 
@@ -122,6 +132,9 @@ The action of the game takes place in an arena, which contains rockets, obstacle
 **Factory Method** is a creational design pattern that provides an interface for creating objects in a superclass, but allows to alter the type of objects that will be created. **Builder** pattern is also a creational pattern that lets you construct complex objects step by step.
 
 **Implementation**
+      
+  <p align="center" justify="center">
+  <img src="UML/BuilderUML.png"/>
 
 **Consequences**
 
