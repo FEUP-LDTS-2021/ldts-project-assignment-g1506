@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Display</title>
+  <title>Coverage Report > Game</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,7 +20,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">Classes</a>
 </div>
 
-<h1>Coverage Summary for Class: Display (Classes)</h1>
+<h1>Coverage Summary for Class: Game (Classes)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,7 +39,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Display</td>
+  <td class="name">Game</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -50,18 +50,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    91,7%
+    50%
   </span>
   <span class="absValue">
-    (11/12)
+    (3/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    74,3%
+    42,9%
   </span>
   <span class="absValue">
-    (26/35)
+    (15/35)
   </span>
 </td>
 </tr>
@@ -75,93 +75,91 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Classes;
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import com.googlecode.lanterna.TerminalPosition;
-<i class="no-highlight">4</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
-<i class="no-highlight">5</i>&nbsp;import com.googlecode.lanterna.TextColor;
-<i class="no-highlight">6</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
-<i class="no-highlight">7</i>&nbsp;import java.util.ArrayList;
-<i class="no-highlight">8</i>&nbsp;import java.util.List;
-<i class="no-highlight">9</i>&nbsp;import java.util.Random;
-<i class="no-highlight">10</i>&nbsp;
-<i class="no-highlight">11</i>&nbsp;public class Display {
-<i class="no-highlight">12</i>&nbsp;    private int width;
-<i class="no-highlight">13</i>&nbsp;    private int height;
-<i class="no-highlight">14</i>&nbsp;    public Rocket rocket1;
-<i class="no-highlight">15</i>&nbsp;    public Rocket rocket2;
-<i class="no-highlight">16</i>&nbsp;    private List&lt;Obstacle&gt; obstacles;
-<i class="no-highlight">17</i>&nbsp;    private List&lt;Wall&gt; walls;
-<i class="no-highlight">18</i>&nbsp;
-<b class="fc"><i class="no-highlight">19</i>&nbsp;    public Display(int width, int height){</b>
-<b class="fc"><i class="no-highlight">20</i>&nbsp;        this.width = width;</b>
-<b class="fc"><i class="no-highlight">21</i>&nbsp;        this.height = height;</b>
-<b class="fc"><i class="no-highlight">22</i>&nbsp;        rocket1 = new Rocket(width/3,height-1);</b>
-<b class="fc"><i class="no-highlight">23</i>&nbsp;        rocket2 = new Rocket((width/3)*2,height-1);</b>
-<b class="fc"><i class="no-highlight">24</i>&nbsp;        obstacles = createObstacles();</b>
-<b class="fc"><i class="no-highlight">25</i>&nbsp;        walls = createWalls();</b>
-<i class="no-highlight">26</i>&nbsp;    }
-<i class="no-highlight">27</i>&nbsp;
-<i class="no-highlight">28</i>&nbsp;    public int getWidth(){
-<b class="fc"><i class="no-highlight">29</i>&nbsp;        return width;</b>
-<i class="no-highlight">30</i>&nbsp;    }
-<i class="no-highlight">31</i>&nbsp;
-<i class="no-highlight">32</i>&nbsp;    public int getHeight(){
-<b class="fc"><i class="no-highlight">33</i>&nbsp;        return height;</b>
-<i class="no-highlight">34</i>&nbsp;    }
-<i class="no-highlight">35</i>&nbsp;
-<b class="fc"><i class="no-highlight">36</i>&nbsp;    public Position moveUp1(){return new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()-1);}</b>
-<b class="fc"><i class="no-highlight">37</i>&nbsp;    public Position moveDown1(){return new Position(rocket1.getPosition().getX(), rocket1.getPosition().getY()+1);}</b>
-<i class="no-highlight">38</i>&nbsp;    public Position moveUp2(){
-<b class="fc"><i class="no-highlight">39</i>&nbsp;        return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()-1);</b>
-<i class="no-highlight">40</i>&nbsp;    }
-<i class="no-highlight">41</i>&nbsp;    public Position moveDown2(){
-<b class="fc"><i class="no-highlight">42</i>&nbsp;        return new Position(rocket2.getPosition().getX(), rocket2.getPosition().getY()+1);</b>
+<i class="no-highlight">3</i>&nbsp;import State.State;
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;import State.MenuState;
+<i class="no-highlight">7</i>&nbsp;import gui.KeyBoardObserver;
+<i class="no-highlight">8</i>&nbsp;import gui.LanternaGUI;
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;import java.awt.*;
+<i class="no-highlight">11</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">12</i>&nbsp;import java.net.URISyntaxException;
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;public class Game {
+<b class="fc"><i class="no-highlight">15</i>&nbsp;    private final int width;</b>
+<i class="no-highlight">16</i>&nbsp;    private final int height;
+<i class="no-highlight">17</i>&nbsp;    private final int fps;
+<i class="no-highlight">18</i>&nbsp;    private final LanternaGUI gui;
+<i class="no-highlight">19</i>&nbsp;    private final KeyBoardObserver keyBoardObserver;
+<b class="fc"><i class="no-highlight">20</i>&nbsp;    private State state;</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;    public long initialTime;</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;    private static Game singleton = null;</b>
+<i class="no-highlight">24</i>&nbsp;
+<i class="no-highlight">25</i>&nbsp;    public Game(int x, int y, int fps) throws IOException, URISyntaxException, FontFormatException {
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        width = x;</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;        height = y;</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;        this.fps = fps;</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        this.gui = new LanternaGUI(width, height);</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        this.keyBoardObserver = new KeyBoardObserver();</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        this.state = new MenuState(this, gui);</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;    }</b>
+<i class="no-highlight">33</i>&nbsp;
+<b class="nc"><i class="no-highlight">34</i>&nbsp;    public static Game getInstance() throws IOException, URISyntaxException, FontFormatException {</b>
+<b class="nc"><i class="no-highlight">35</i>&nbsp;        if (singleton == null) {</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;            singleton = new Game(120, 45, 25);</b>
+<i class="no-highlight">37</i>&nbsp;        }
+<i class="no-highlight">38</i>&nbsp;        return singleton;
+<i class="no-highlight">39</i>&nbsp;    }
+<b class="nc"><i class="no-highlight">40</i>&nbsp;</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;    public int getWidth(){</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;            return width;</b>
 <i class="no-highlight">43</i>&nbsp;    }
-<i class="no-highlight">44</i>&nbsp;
-<i class="no-highlight">45</i>&nbsp;    public void moveRocket1(Position position){
-<b class="fc"><i class="no-highlight">46</i>&nbsp;        rocket1.setPosition(position);</b>
-<i class="no-highlight">47</i>&nbsp;    }
-<i class="no-highlight">48</i>&nbsp;    public void moveRocket2(Position position){
-<b class="fc"><i class="no-highlight">49</i>&nbsp;        rocket2.setPosition(position);</b>
-<i class="no-highlight">50</i>&nbsp;    }
-<i class="no-highlight">51</i>&nbsp;
-<i class="no-highlight">52</i>&nbsp;    public List&lt;Obstacle&gt; createObstacles(){
-<b class="fc"><i class="no-highlight">53</i>&nbsp;        List&lt;Obstacle&gt; obstacles = new ArrayList&lt;&gt;();</b>
-<i class="no-highlight">54</i>&nbsp;
-<b class="fc"><i class="no-highlight">55</i>&nbsp;        for(int i = 0; i&lt; height - 8 ; i++){</b>
-<b class="fc"><i class="no-highlight">56</i>&nbsp;            Random rand = new Random();</b>
-<b class="fc"><i class="no-highlight">57</i>&nbsp;            Obstacle obs = new Obstacle(rand.nextInt(width), i);</b>
-<b class="fc"><i class="no-highlight">58</i>&nbsp;            obstacles.add(obs);</b>
-<i class="no-highlight">59</i>&nbsp;        }
-<b class="fc"><i class="no-highlight">60</i>&nbsp;        return obstacles;</b>
-<i class="no-highlight">61</i>&nbsp;    }
-<i class="no-highlight">62</i>&nbsp;
-<i class="no-highlight">63</i>&nbsp;
-<i class="no-highlight">64</i>&nbsp;    public List&lt;Wall&gt; createWalls(){
-<b class="fc"><i class="no-highlight">65</i>&nbsp;        List&lt;Wall&gt; walls = new ArrayList&lt;&gt;();</b>
-<i class="no-highlight">66</i>&nbsp;
-<b class="fc"><i class="no-highlight">67</i>&nbsp;        for(int i = height-1;  i &gt; 0 ; i--){</b>
-<b class="fc"><i class="no-highlight">68</i>&nbsp;            Wall wall = new Wall(width/2,i);</b>
-<b class="fc"><i class="no-highlight">69</i>&nbsp;            walls.add(wall);</b>
-<i class="no-highlight">70</i>&nbsp;        }
-<b class="fc"><i class="no-highlight">71</i>&nbsp;        return walls;</b>
-<i class="no-highlight">72</i>&nbsp;    }
-<i class="no-highlight">73</i>&nbsp;
-<i class="no-highlight">74</i>&nbsp;    public void draw(TextGraphics graphics) {
-<b class="nc"><i class="no-highlight">75</i>&nbsp;        graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(width, height), &#39; &#39;);</b>
-<i class="no-highlight">76</i>&nbsp;
-<b class="nc"><i class="no-highlight">77</i>&nbsp;        rocket1.draw(graphics);</b>
-<b class="nc"><i class="no-highlight">78</i>&nbsp;        rocket2.draw(graphics);</b>
-<i class="no-highlight">79</i>&nbsp;
-<b class="nc"><i class="no-highlight">80</i>&nbsp;        for(Obstacle obstacle: obstacles) {</b>
-<b class="nc"><i class="no-highlight">81</i>&nbsp;            obstacle.draw(graphics);</b>
-<b class="nc"><i class="no-highlight">82</i>&nbsp;        }</b>
-<i class="no-highlight">83</i>&nbsp;
-<b class="nc"><i class="no-highlight">84</i>&nbsp;        for(Wall wall: walls) {</b>
-<b class="nc"><i class="no-highlight">85</i>&nbsp;            wall.draw(graphics);</b>
-<b class="nc"><i class="no-highlight">86</i>&nbsp;        }</b>
-<i class="no-highlight">87</i>&nbsp;
-<i class="no-highlight">88</i>&nbsp;    }
-<i class="no-highlight">89</i>&nbsp;}
+<b class="nc"><i class="no-highlight">44</i>&nbsp;</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;    public int getHeight(){</b>
+<i class="no-highlight">46</i>&nbsp;            return height;
+<b class="nc"><i class="no-highlight">47</i>&nbsp;    }</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;</b>
+<i class="no-highlight">49</i>&nbsp;    public int getFps() {return fps;}
+<i class="no-highlight">50</i>&nbsp;
+<i class="no-highlight">51</i>&nbsp;    public void setGameState(State state) {
+<i class="no-highlight">52</i>&nbsp;        this.state= state;
+<b class="fc"><i class="no-highlight">53</i>&nbsp;        if (state != null)</b>
+<i class="no-highlight">54</i>&nbsp;            this.state.start();
+<i class="no-highlight">55</i>&nbsp;    }
+<i class="no-highlight">56</i>&nbsp;
+<b class="fc"><i class="no-highlight">57</i>&nbsp;    public KeyBoardObserver getKeyBoardObserver(){ return keyBoardObserver;}</b>
+<i class="no-highlight">58</i>&nbsp;
+<i class="no-highlight">59</i>&nbsp;    public void setInitialTime(long initialTime) {
+<i class="no-highlight">60</i>&nbsp;        this.initialTime = initialTime;
+<b class="nc"><i class="no-highlight">61</i>&nbsp;    }</b>
+<b class="nc"><i class="no-highlight">62</i>&nbsp;</b>
+<b class="nc"><i class="no-highlight">63</i>&nbsp;    public void start() throws IOException{</b>
+<i class="no-highlight">64</i>&nbsp;        int frameTime = 1000 / this.fps;
+<i class="no-highlight">65</i>&nbsp;
+<i class="no-highlight">66</i>&nbsp;        gui.addKeyBoardListener(getKeyBoardObserver());
+<i class="no-highlight">67</i>&nbsp;
+<b class="nc"><i class="no-highlight">68</i>&nbsp;        this.state.start();</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;</b>
+<i class="no-highlight">70</i>&nbsp;        while ( state != null ) {
+<b class="nc"><i class="no-highlight">71</i>&nbsp;</b>
+<i class="no-highlight">72</i>&nbsp;            long startTime = System.currentTimeMillis();
+<b class="nc"><i class="no-highlight">73</i>&nbsp;</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;            state.step(this, startTime);</b>
+<i class="no-highlight">75</i>&nbsp;
+<b class="nc"><i class="no-highlight">76</i>&nbsp;            long elapsedTime = System.currentTimeMillis() - startTime;</b>
+<b class="nc"><i class="no-highlight">77</i>&nbsp;            long sleepTime = frameTime - elapsedTime;</b>
+<b class="nc"><i class="no-highlight">78</i>&nbsp;</b>
+<i class="no-highlight">79</i>&nbsp;            if (sleepTime &gt; 0) try {
+<i class="no-highlight">80</i>&nbsp;                Thread.sleep(sleepTime);
+<i class="no-highlight">81</i>&nbsp;            } catch (InterruptedException e) {
+<i class="no-highlight">82</i>&nbsp;
+<i class="no-highlight">83</i>&nbsp;            }
+<i class="no-highlight">84</i>&nbsp;        }
+<i class="no-highlight">85</i>&nbsp;        gui.close();
+<i class="no-highlight">86</i>&nbsp;    }
+<i class="no-highlight">87</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -188,7 +186,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-09 02:09</div>
+    <div style="float:right;">generated on 2022-01-30 00:19</div>
 </div>
 </body>
 </html>

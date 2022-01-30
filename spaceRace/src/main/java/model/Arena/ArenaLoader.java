@@ -1,6 +1,5 @@
 package model.Arena;
 
-import model.Arena.ArenaBuilder;
 import model.Obstacle;
 import model.Rocket;
 import model.Wall;

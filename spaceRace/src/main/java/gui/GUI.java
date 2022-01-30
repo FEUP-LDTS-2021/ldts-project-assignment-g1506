@@ -12,7 +12,6 @@ public interface GUI {
         UP2,
         DOWN1,
         DOWN2,
-        PAUSE,
         QUIT,
         ENTER
     }

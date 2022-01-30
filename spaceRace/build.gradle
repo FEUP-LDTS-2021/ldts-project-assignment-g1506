@@ -1,7 +1,7 @@
 plugins {
     id 'groovy'
     id 'java'
-
+    id 'info.solidsoft.pitest' version '1.6.0'
     id "org.kordamp.gradle.errorprone" version "0.47.0"
 }
 
@@ -10,6 +10,12 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+pitest{
+    junit5PluginVersion = '0.15'
+    pitestVersion = '1.6.7'
+    verbose = true;
 }
 
 dependencies {

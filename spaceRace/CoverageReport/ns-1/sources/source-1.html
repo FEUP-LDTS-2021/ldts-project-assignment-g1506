@@ -75,14 +75,16 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Classes;
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import java.io.IOException;
-<i class="no-highlight">4</i>&nbsp;
-<b class="nc"><i class="no-highlight">5</i>&nbsp;public class Application {</b>
-<i class="no-highlight">6</i>&nbsp;    public static void main(String args[]) throws IOException {
-<b class="nc"><i class="no-highlight">7</i>&nbsp;        Game game = new Game(120,40);</b>
-<b class="nc"><i class="no-highlight">8</i>&nbsp;        game.run();</b>
-<i class="no-highlight">9</i>&nbsp;    }
-<i class="no-highlight">10</i>&nbsp;}
+<i class="no-highlight">3</i>&nbsp;import java.awt.*;
+<i class="no-highlight">4</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">5</i>&nbsp;import java.net.URISyntaxException;
+<i class="no-highlight">6</i>&nbsp;
+<b class="nc"><i class="no-highlight">7</i>&nbsp;public class Application {</b>
+<i class="no-highlight">8</i>&nbsp;    public static void main(String args[]) throws IOException, URISyntaxException, FontFormatException {
+<b class="nc"><i class="no-highlight">9</i>&nbsp;        Game game = Game.getInstance();</b>
+<b class="nc"><i class="no-highlight">10</i>&nbsp;        game.start();</b>
+<i class="no-highlight">11</i>&nbsp;    }
+<i class="no-highlight">12</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -109,7 +111,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-09 02:09</div>
+    <div style="float:right;">generated on 2022-01-30 00:19</div>
 </div>
 </body>
 </html>

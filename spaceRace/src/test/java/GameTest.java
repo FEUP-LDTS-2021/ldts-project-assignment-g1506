@@ -28,49 +28,4 @@ public class GameTest {
         Assertions.assertEquals(fps, z);
     }
 
-    //Tests if game is created with the right size
-    /*@Test
-    public void sizeGame1() {
-        int x=120;
-        int y=40;
-        int fps = 30;
-        Game game = new Game(x,y, fps);
-
-        Assertions.assertEquals(x, game.getWidth());
-        Assertions.assertEquals(y, game.getHeight());
-    }
-    @Test
-    public void sizeGame2() {
-        int x=100;
-        int y=30;
-        int fps = 30;
-        Game game = new Game(x,y, fps);
-
-        Assertions.assertEquals(x, game.getWidth());
-        Assertions.assertEquals(y, game.getHeight());
-    }
-    @Test
-    public void sizeGame3() {
-        int x=90;
-        int y=20;
-        int fps = 30;
-        Game game = new Game(x,y, fps);
-
-        Assertions.assertEquals(x, game.getWidth());
-        Assertions.assertEquals(y, game.getHeight());
-    }
-
-    @Test
-    public void sizeDisplay1(){
-        int x=120;
-        int y=40;
-        int fps = 30;
-        Game game = new Game(x,y, fps);
-
-        Assertions.assertEquals(x, game.display.getWidth());
-        Assertions.assertEquals(y, game.display.getHeight());
-    }
-
-     */
-
 }
