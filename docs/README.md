@@ -207,7 +207,8 @@ In the beginning we start by using the switch statement to move the rockets, to 
 
 ### Screenshot of coverage report
 
-### Link to mutation testing report
+<p align="center" justify="center">
+  <img src="Imagens/CoverageReport.png"/>
 
 ## SELF-EVALUATION
 
