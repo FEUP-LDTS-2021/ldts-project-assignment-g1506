@@ -9,10 +9,6 @@ public abstract class Controller<T> {
 
     public Controller(T model) {this.model = model;}
 
-    public T getModel() {return model;}
-
-    public void setModel(T model) {this.model = model;}
-
     public abstract void step (Game game, long time) throws IOException;
 
 }

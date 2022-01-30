@@ -72,6 +72,8 @@ public class ArenaController extends GameController{
         obstacle.position.setX(obstacle.position.getX()-1);
     }
 
+
+
     public void removeWall(Game game , long time){
 
         if(((time-game.initialTime)/900) > aux){
@@ -81,7 +83,6 @@ public class ArenaController extends GameController{
         }
     }
 
-    //CHECK COLISIONS
     public void checkColisions(){
 
         for (Obstacle obstacles: arena.getObstacles()){

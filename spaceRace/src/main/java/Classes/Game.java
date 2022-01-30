@@ -33,7 +33,7 @@ public class Game {
 
     public static Game getInstance() throws IOException, URISyntaxException, FontFormatException {
         if (singleton == null) {
-            singleton = new Game(120, 45, 30);
+            singleton = new Game(120, 45, 25);
         }
         return singleton;
     }
@@ -45,6 +45,8 @@ public class Game {
     public int getHeight(){
             return height;
     }
+
+    public int getFps() {return fps;}
 
     public void setGameState(State state) {
         this.state= state;
@@ -64,6 +66,7 @@ public class Game {
         gui.addKeyBoardListener(getKeyBoardObserver());
 
         this.state.start();
+
         while ( state != null ) {
 
             long startTime = System.currentTimeMillis();

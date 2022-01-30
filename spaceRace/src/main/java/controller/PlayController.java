@@ -94,5 +94,12 @@ public class PlayController extends GameController implements KeyBoardListener {
     public Position moveDown1(){return new Position(arena.getRocket1().getPosition().getX(), arena.getRocket1().getPosition().getY()+1);}
     public Position moveDown2(){return new Position(arena.getRocket2().getPosition().getX(), arena.getRocket2().getPosition().getY()+1);}
 
+    public State getState() {
+        return state;
+    }
+
+    public ArenaController getArenaController() {
+        return arenaController;
+    }
 }
 
